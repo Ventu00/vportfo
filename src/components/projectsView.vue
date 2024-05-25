@@ -3,7 +3,7 @@
     <h1 class="text-center text-white my-4">Projects Gallery</h1>
     <button @click="$emit('close-projects')" class="btn btn-secondary mb-4">Close</button>
     <div class="row">
-      <div class="col-md-4 col-sm-6 mb-4" v-for="(project, index) in projects" :key="index">
+      <div class="col-md-4 col-sm-6 mb-4" v-for="(project, index) in projects" :key="index" @click="showProjectDetail(index)">
         <div class="card h-100">
           <img :src="project.image" class="card-img-top" :alt="project.title">
           <div class="card-body">
@@ -28,6 +28,16 @@ export default {
         // Agrega más proyectos según sea necesario
       ]
     }
+  },
+  methods: {
+    showProjectDetail(index) {
+      // Asegúrate de que this.$router esté definido antes de llamar a push
+      if (this.$router) {
+        this.$router.push({ name: 'ProjectDetail', params: { index } });
+      } else {
+        console.error('Vue Router no está disponible.');
+      }
+    }
   }
 }
 </script>
@@ -44,15 +54,4 @@ export default {
   height: 200px;
   object-fit: cover;
 }
-
-#circularcursor{
-  background-color: #00000088;
-    border: 3px solid #09de85;
-    height: 40px;
-    width: 40px;
-    border-radius: 50%;
-    position: fixed;
-    z-index: 9999;
-    pointer-events: none;
-    transition: height 0.6s, width 0.6s; /* Transición suave para cambiar el tamaño */}
 </style>
