@@ -68,13 +68,19 @@
                 </div>
               </div>
             </div>
-            <div class="projects colcover containerCom col-md-6 col-sm-12" @click="toggleProjects">
-      <a href="your-link-here" class="top-right-go">
+            <div class="projects colcover containerComProject col-md-6 col-sm-12" @click="toggleProjects">
+    <video autoplay muted loop class="video-background">
+        <source src="./images/projectvideo.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <a href="your-link-here" class="top-right-go">
         <img src="./images/go.png" alt="">
-      </a>
-      <h1>Projects</h1>
-      <p class="contentText">Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-    </div>
+    </a>
+    <h1>Projects</h1>
+    <p class="contentText">Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+</div>
+
+
           </div>
         </div>
         <div class="row">
@@ -182,6 +188,9 @@ export default {
 </script>
 
 <style scoped>
+
+
+
 .cvtext{
   text-decoration: none;
   color: #09DE85;
@@ -221,6 +230,11 @@ body{
 
 }
 
+.containerComProject{
+    background-color: #1a1a1aae;
+
+}
+
 .margincont{
     margin-left: 17%;
     margin-right: 17%;
@@ -257,8 +271,22 @@ color: #09DE85 ;
 }
 
 
+
 .colcover{
+    position: relative;
+    overflow: hidden;
     margin: 0;
+
+}
+
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
 }
 
 
