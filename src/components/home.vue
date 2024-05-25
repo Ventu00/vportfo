@@ -1,7 +1,6 @@
 <template>
   <div class="all">
-    <div id="circularcursor"></div>
-    <div id="clickcursor"></div>
+    
 
     <div class="margincont">
       <div class="container-fluid">
@@ -14,10 +13,10 @@
           <div class="introcont col-md-9 col-sm-12">
             <div class="intro">
               <div class="image-container">
-                <img src="./images/alex.png" alt="">
+                <img src="./images/alex.png" class="img-fluid aleximg" alt="">
               </div>
               <div class="text-container">
-                <h1 class="introtext">Àlex Ventura</h1>
+                <h1 class="introtext introtit">Àlex Ventura</h1>
                 <h2 class="greenText introtext">IT Specialist & Web developer</h2>
                 <p class="contentText introtext">Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br> Lorem ipsum sit amet, consectetur adipis</p>
               </div>
@@ -36,29 +35,32 @@
             <div class="group1 col-md-6">
               <div class="row">
                 <div class="compdt1 col-md-4">
-                  <img class="iconPro" src="./images/linkedin.png" alt="">
-                  <a href="https://www.linkedin.com/in/%C3%A0lex-ventura-vilalta-491607271/" class="top-right-link">
-                    <img src="images/link.png" alt=" ">
+                 <a href="https://github.com/Ventu00?tab=repositories" >
+                  <img class="iconPro img-fluid" src="./images/linkedin.png" alt="">
+
+                    <img src="./images/link.png" class="top-right-link" alt=" ">
                   </a>
                 </div>
-                <div class="compdt2 col-md-4">
-                  <img class="iconPro" src="./images/github.png" alt="">
-                  <a href="https://github.com/Ventu00?tab=repositories" class="top-right-link">
-                    <img src="./images/link.png" alt=" ">
+                <div class="compdt2 col-md-4 ">
+                  <a href="https://github.com/Ventu00?tab=repositories" >
+                    <img class="iconPro img-fluid" src="./images/github.png" alt="">
+
+                    <img src="./images/link.png" class="top-right-link" alt=" ">
                   </a>
                 </div>
-                <div class="compdt3 col-md-4">
-                  <h2>CV</h2>
-                  <img class="iconPro" src="./images/download.png" alt="">
-                  <a href="your-link-here" class="top-right-link">
-                    <img src="./images/link.png" alt=" ">
+                <div class="compdt3 col-md-4 img-fluid">
+                 
+                  <a class="cvtext" href="your-link-here" >
+                    <h2  >CV</h2>
+                  <img class="iconPro img-fluid" src="./images/download.png" alt="">
+                    <img src="./images/link.png" class="top-right-link" alt=" ">
                   </a>
                 </div>
                 <div class="mail containerCom col-md-12">
-                  <img class="iconPro mailImage" src="./images/mail.png" alt="">
+                  <img class="iconPro mailImage img-fluid" src="./images/mail.png" alt="">
                   <div class="textmail">
                     <h2 class="titmail">Something on mind?</h2>
-                    <p class="contentText maildir">alexventvv@gmail.com <img class="copyimage" src="./images/copy.png" alt=""></p>
+                    <p class="contentText maildir">alexventvv@gmail.com <img class="copyimage img-fluid" src="./images/copy.png" alt=""></p>
                     <a href="your-link-here" class="top-right-link">
                       <img src="./images/link.png" alt=" ">
                     </a>
@@ -66,19 +68,19 @@
                 </div>
               </div>
             </div>
-      <div class="projects colcover containerCom col-md-6 col-sm-12" @click="showProjects = true">
-              <a href="your-link-here" class="top-right-go">
-                <img src="./images/go.png" alt="">
-              </a>
-              <h1>Projects</h1>
-              <p class="contentText">Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </div>
+            <div class="projects colcover containerCom col-md-6 col-sm-12" @click="toggleProjects">
+      <a href="your-link-here" class="top-right-go">
+        <img src="./images/go.png" alt="">
+      </a>
+      <h1>Projects</h1>
+      <p class="contentText">Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </div>
           </div>
         </div>
         <div class="row">
           <div class="col-md-12 map containerCom">
-            <p>Mapa</p>
-          </div>
+<img src="./images/location.svg" class="img-fluid" alt="">          
+</div>
         </div>
         <div class="row">
           <div class="col-md-12">
@@ -141,6 +143,11 @@ export default {
   props: {
     
   },
+  methods:{
+  toggleProjects() {
+      this.$emit('toggle-projects');
+    }
+  },
   mounted() {
     const images = [
       "image 46.png",
@@ -168,42 +175,28 @@ export default {
     });
 
     // Script para el cursor personalizado
-    const cursor = document.getElementById('circularcursor');
 
-    document.addEventListener('mousemove', function(e) {
-      const cursorWidth = cursor.offsetWidth;
-      const cursorHeight = cursor.offsetHeight;
-      const mouseX = e.clientX - (cursorWidth / 2);
-      const mouseY = e.clientY - (cursorHeight / 2);
-      cursor.style.left = mouseX + 'px';
-      cursor.style.top = mouseY + 'px';
-    });
-
-    document.addEventListener('click', function(e) {
-      const cursorWidth = cursor.offsetWidth;
-      const cursorHeight = cursor.offsetHeight;
-      const mouseX = e.clientX - cursorWidth / 2 - 5; // Ajuste a la izquierda
-      const mouseY = e.clientY - cursorHeight / 2 - 5; // Ajuste hacia arriba
-      cursor.style.left = mouseX + 'px';
-      cursor.style.top = mouseY + 'px';
-      cursor.style.height = '40px';
-      cursor.style.width = '40px';
-      cursor.style.display = 'block';
-      setTimeout(function() {
-        cursor.style.height = '70px';
-        cursor.style.width = '70px';
-        setTimeout(function() {
-          cursor.style.height = '40px';
-          cursor.style.width = '40px';
-        }, 100);
-      }, 10);
-    });
   }
 
 }
 </script>
 
 <style scoped>
+.cvtext{
+  text-decoration: none;
+  color: #09DE85;
+}
+.containerCom {
+  position: relative; /* Asegura que el div actúe como un contenedor */
+  overflow: hidden; /* Evita que la imagen sobresalga */
+}
+
+.full-width {
+  width: 100%; /* Establece el ancho de la imagen al 100% del contenedor */
+  display: block; /* Asegura que la imagen se comporte correctamente */
+  margin: 0; /* Elimina los márgenes */
+  padding: 0; /* Elimina el relleno */
+}
 
 
 .all{
@@ -265,7 +258,6 @@ color: #09DE85 ;
 
 
 .colcover{
-    height: 313px;
     margin: 0;
 }
 
@@ -363,13 +355,14 @@ color: #09DE85 ;
     margin-right: 20px;
     background-color: #4071b1;
 }
-.compdt3{
+.compdt3 {
     flex: 0 0 30.33333%; /* Para que ocupe 1/3 del ancho */
     max-width: 100.33333%;
     text-align: center;
     padding-top: 17px;
-
+    margin-right: 1vw; /* Margen ajustable según el ancho de la pantalla */
 }
+
 
 .mail{
     flex: 0 0 98%; /* Para que ocupe 1/3 del ancho */
@@ -378,6 +371,7 @@ color: #09DE85 ;
     align-items: center;
     padding: 35px;
     height: 100%;
+    margin-right: 1vw;
 }
 
 .projects, .compdt1, .compdt2, .compdt3, .mail, .lengcont, .introcont, .map, .slider-container {
@@ -416,12 +410,14 @@ color: #09DE85 ;
 
 
 .map{
-    height: 106px;
-    width: 100% ;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    padding: 0;
+    margin-top: 10px;
 }
 
 .textSlider{
-
     margin: 15px;
 }
 
@@ -440,6 +436,7 @@ color: #09DE85 ;
 }
 
 .slider-container {
+  margin: 0;
     width: 100%;
     background-color: #181818;
 
@@ -448,6 +445,7 @@ color: #09DE85 ;
     padding-left: 0;}
 
 .carousel-inner{
+  margin: 0;
     padding: 0;
 }
 .carousel-control-prev-icon,
@@ -545,10 +543,40 @@ color: #09DE85 ;
 
 
 @media (max-width: 1667px) {
+.copyimage{
+  display: none;
+}
+
+.introtit{
+  font-size: 90px;
+}
+.introtext{
+}
+
+
+.aleximg{
+  width: 320px;
+}
+
+  .text-container{
+    padding: 30px;
+padding-left: 0;
+width: 100%;
+height:100%
+  }
+
+  
+    .image-container {
+      margin-right: 0;
+      padding: 0;
+    }
+
+
     .group1 .compdt1, .group1 .compdt2, .group1 .compdt3 {
         flex: 1 1 30%;
         max-width: 31%;
         padding: 5px;
+        margin-right: 8px;
     }
     .introcont{
         flex: 0 0 100%; /* Cambiar a ancho completo en dispositivos móviles */
@@ -567,130 +595,23 @@ color: #09DE85 ;
     }
 
 }
-@media (max-width: 967px) {
-    .mailImage {
-        margin-right: 10px; /* Espacio entre la imagen y el texto */
-    }
-    .maildir{
+@media (max-width: 1277px) {
 
-        font-size: 10px;
-    }
-
-    .colcover{
-        margin-top: 10px;
-    }
-    .copyimage{
-        display: none;
-    }
- 
-      
-    .mail .top-right-link {
-        display: block;
-        position: absolute;
-        top: 6px; /* Ajusta la distancia desde la parte superior */
-        right: 6px; /* Ajusta la distancia desde la parte derecha */
-    }
-    
-    /* Asegúrate de que fuera del contenedor .mail, el enlace esté oculto */
-    .top-right-link {
-        display: none;
+  
+  .image-container {
+     display: none;
     }
     
 
-    h1{
-        font-size: 66px;
-    }
-    .margincont{
-        margin-left: 20%;
-        margin-right: 20%;
-    }
-
-    .group1 {
-        gap: 10px; /* Ajusta el espacio entre elementos para móviles */
-    }
-
-    .group1 .compdt1, .group1 .compdt2, .group1 .compdt3 {
-        flex: 1 1 30%;
-        max-width: 29%;
-        padding: 5px;
-    }
-
-    .group1 .mail {
-        flex: 1 1 100%;
-        max-width: 100%;
-        text-align: left;
-        padding: 10px;
-    }
-
-    .textmail {
-        width: 100%;
-        padding: 0 10px;
-        box-sizing: border-box;
-    }
-    
-    .textmail{
-        padding-top: 17px;
-    }
-
-    .textmail h2, .textmail p {
-        text-align: left;
-        word-wrap: break-word;
-        font-size: 16px;
-        line-height: 1.2;
-        margin: 10px 0;
-        max-width: 100%;
-    }
-
-    .iconPro {
-        max-width: 100%;
-    }
-
-    .text-container {
-        text-align: center;
-        padding: 20px;
-    }
-
-    .image-container {
-        display: none;
-    }
-
-    .introcont {
-        flex: 0 0 100%; /* Cambiar a ancho completo en dispositivos móviles */
-        flex-direction: column;
-        max-width: 100%;
-    }
-
-    .lengcont {
-        flex: 0 0 100%; /* Cambiar a ancho completo en dispositivos móviles */
-        max-width: 100%;
-        margin-left: 0; /* Eliminar margen para que ocupe todo el ancho */
-    }
-
-    .lenguages{
-        width: 100%;
-    }
-    .skills{
-        padding: 15px;
-        width: 74px;
-    }
-
-    .primer {
-        display: flex;
-        flex-wrap: wrap;
-    }
-
-    .groups {
-        order: 1; /* Cambiar el orden de .groups para que aparezca primero en móviles */
-        
-    }
-
-    .lengcont {
-        order: 2; /* Cambiar el orden de .lengcont para que aparezca después de .groups en móviles */
-    }
-    
+}
+@media (max-width: 1090px) {
+.compdt3 {
+margin-right: 0;
 }
 
-@media (max-width: 767px) {
+
+.mail{
+}
 
     .circularcursor{
         background-color: #00000088;
