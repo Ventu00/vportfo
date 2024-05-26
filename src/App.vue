@@ -63,7 +63,12 @@ document.addEventListener('click', function(e) {
 
 <style>
 #app.blurred {
-  filter: blur(5px);
+  filter: blur(50px);
+}
+
+::selection {
+    background-color: #09de85; /* Cambia el color de fondo de la selección a verde */
+    color: #fff; /* Cambia el color del texto seleccionado a blanco */
 }
 
 #clickcursor {
@@ -112,7 +117,7 @@ body {
 }
 
 .blurred {
-  filter: blur(5px);
+  filter: blur(45px);
 }
 .overlay {
   position: fixed;
@@ -120,7 +125,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.899);
   z-index: 90;
   overflow-y: auto;
 }

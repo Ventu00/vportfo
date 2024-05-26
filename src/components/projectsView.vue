@@ -1,6 +1,6 @@
 <template>
   <div class="projects-view container animate__animated animate__fadeInUp">
-    <h1 class="text-center text-white my-4">Projects Gallery</h1>
+    <h1 class="text-center text-white my-4">Projects</h1>
     <button @click="closeProjects" class="btn btn-outline-light mb-4">Close</button>
     <div class="row">
       <div 
@@ -28,8 +28,8 @@ export default {
     return {
       projects: [
         { 
-          title: 'Project 1',
-          description: 'Description for project 1',
+          title: 'Bitiby',
+          description: 'Una aplicación solidaria con mapa interactivo',
           image: './images/btbm1.png',
           initialProblem: 'Initial problem for project 1',
           solution: 'Solution for project 1',
@@ -67,7 +67,15 @@ export default {
 }
 </script>
 
+
 <style scoped>
+h1{
+  font-size: 85px;
+}
+
+.btn{
+  cursor: none;
+}
 .projects-view {
   color: white;
 }

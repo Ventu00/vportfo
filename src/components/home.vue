@@ -37,19 +37,19 @@
               <div class="row">
                 <div class="compdt1 col-md-4">
                   <a href="https://github.com/Ventu00?tab=repositories">
-                    <img class="iconPro img-fluid" src="./images/linkedin.png" alt="">
+                    <img class="iconPro img-fluid" src="./images/linkedin.svg" alt="">
                     <img src="./images/link.png" class="top-right-link" alt="">
                   </a>
                 </div>
                 <div class="compdt2 col-md-4">
                   <a href="https://github.com/Ventu00?tab=repositories">
-                    <img class="iconPro img-fluid" src="./images/github.png" alt="">
+                    <img class="iconPro img-fluid" src="./images/github.svg" alt="">
                     <img src="./images/link.png" class="top-right-link" alt="">
                   </a>
                 </div>
                 <div class="compdt3 col-md-4 img-fluid">
                   <a class="cvtext" href="your-link-here">
-                    <h2>CV</h2>
+                    <h1>CV</h1>
                     <img class="iconPro img-fluid" src="./images/download.png" alt="">
                     <img src="./images/link.png" class="top-right-link" alt="">
                   </a>
@@ -75,14 +75,17 @@
               <a href="your-link-here" class="top-right-go">
                 <img src="./images/go.png" alt="">
               </a>
-              <h1>Projects</h1>
+              <div class="conTxtProj">
+                <h1>Projects</h1>
               <p class="contentText">Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              </div>
+             
             </div>
           </div>
         </div>
         <div class="row">
           <div class="col-md-12 map containerCom animate__animated  animate__fadeInTopLeft">
-            <img src="./images/location.svg" class="img-fluid mapimg" alt="">
+            <img src="./images/mark.svg" alt="">
           </div>
         </div>
         <div class="row">
@@ -245,6 +248,41 @@ export default {
 </script>
 
 <style scoped>
+
+.projects {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* Esto empuja el contenido hacia la parte inferior */
+  height: 336px; /* Altura fija según tu especificación */
+  overflow: hidden; /* Asegura que el contenido no se desborde */
+}
+
+.projects:hover .video-background {
+  opacity: 0.1;
+}
+
+.video-background {
+  opacity: 0.4;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Para que el video cubra todo el contenedor sin deformarse */
+  z-index: -1; /* Para que el video esté detrás del texto y otros elementos */
+    transition: opacity 0.5s ease; /* Transición de 0.5 segundos */
+
+}
+
+.conTxtProj {
+  margin-top: 22%;
+  padding: 10px;
+  width: 100%;
+}
+
+
+
 .blurred {
   filter: blur(5px);
 }
@@ -260,10 +298,12 @@ export default {
 }
 
 .cvtext{
+  text-align: center;
   text-decoration: none;
-  color: #09DE85;
+  color: #ffffff;
 }
 .containerCom {
+  
   position: relative; /* Asegura que el div actúe como un contenedor */
   overflow: hidden; /* Evita que la imagen sobresalga */
 }
@@ -347,15 +387,6 @@ color: #09DE85 ;
 
 }
 
-.video-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
-}
 
 
 .groups{
@@ -440,34 +471,37 @@ color: #09DE85 ;
 }
 
 .compdt2{
-    flex: 0 0 28.33333%; /* Para que ocupe 1/3 del ancho */
+  text-align: center;
+    flex: 0 0 30%; /* Para que ocupe 1/3 del ancho */
     max-width: 53.33333%;
     margin-right: 20px;
-    background-color: #8d577e;
+    background-color: #1a1a1af0;
 }
 .compdt1{
-    flex: 0 0 28.33333%; /* Para que ocupe 1/3 del ancho */
+  text-align: center;
+
+    flex: 0 0 30%; /* Para que ocupe 1/3 del ancho */
     max-width: 53.33333%;
     margin-right: 20px;
-    background-color: #4071b1;
+    background-color: #1a1a1af0;
 }
 .compdt3 {
-    flex: 0 0 30.33333%; /* Para que ocupe 1/3 del ancho */
-    max-width: 100.33333%;
+    flex: 0 0 30%; /* Para que ocupe 1/3 del ancho */
+    max-width: 100%;
     text-align: center;
     padding-top: 17px;
-    margin-right: 1vw; /* Margen ajustable según el ancho de la pantalla */
+    padding-right: 0;
 }
 
 
 .mail{
-    flex: 0 0 98%; /* Para que ocupe 1/3 del ancho */
+  margin-left: 0;
+    flex: 0 0 100%; /* Para que ocupe 1/3 del ancho */
     max-width: 100%;
     display: flex;
     align-items: center;
     padding: 35px;
     height: 100%;
-    margin-right: 1vw;
 }
 
 .projects, .compdt1, .compdt2, .compdt3, .mail, .lengcont, .introcont, .map, .slider-container {
@@ -482,10 +516,7 @@ color: #09DE85 ;
     border: 2px solid #09de85; /* Borde verde al pasar el mouse sobre el div */
 }
 
-::selection {
-    background-color: #09de85; /* Cambia el color de fondo de la selección a verde */
-    color: #fff; /* Cambia el color del texto seleccionado a blanco */
-}
+
 
 
 
@@ -505,13 +536,16 @@ color: #09DE85 ;
 }
 
 
-.map{
-    width: 100%;
-    align-items: center;
-    text-align: center;
-    padding: 0;
-    margin-top: 10px;
-}
+.map {
+            position: relative;
+            text-align: center;
+            width: 100%;
+            height: 100px; /* Esto hará que el div tenga la altura del viewport */
+            background-image: url('./images/mapl.svg'); /* Ruta de tu imagen */
+            background-size: cover; /* La imagen cubrirá todo el div */
+            background-position: center; /* Centra la imagen */
+            background-repeat: no-repeat; /* Evita que la imagen se repita */
+        }
 
 .textSlider{
     margin: 15px;
@@ -690,6 +724,15 @@ height:100%
         margin-right: 13%;
     }
 
+    .projects {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* Esto empuja el contenido hacia la parte inferior */
+  height: 312px; /* Altura fija según tu especificación */
+  overflow: hidden; /* Asegura que el contenido no se desborde */
+}
+
 }
 @media (max-width: 1310px) {
   .introtit{
@@ -712,11 +755,10 @@ height:100%
   background-size: cover; /* Hace que la imagen cubra todo el div */
   background-position: center; /* Centra la imagen */
 }
-.threeaps{
-  margin-left: 27px;
-}
+/* .threeaps{
+} */
   .margincont{
-        margin-left: 2;
+        margin-left: 2%;
         margin-right: 2%;
     }
 .compdt3 {
@@ -745,9 +787,7 @@ margin-right: 0;
         margin-right: 0;
         margin-bottom: 15px;
     }
-    .mailImage {
-        margin-right: 10px; /* Espacio entre la imagen y el texto */
-    }
+
     .maildir{
 
         font-size: 10px;
@@ -755,6 +795,7 @@ margin-right: 0;
 
     .colcover{
         margin-top: 10px;
+        width: 100%;
     }
     .copyimage{
         display: none;
@@ -783,25 +824,25 @@ margin-right: 0;
     }
 
     .group1 {
-        gap: 10px; /* Ajusta el espacio entre elementos para móviles */
+      margin: 0;
+        gap: 10px;
+        width: 100%; /* Ajusta el espacio entre elementos para móviles */
     }
 
     .group1 .compdt1, .group1 .compdt2, .group1 .compdt3 {
         flex: 1 1 30%;
-        max-width: 29%;
-        padding: 5px;
+        max-width: 100%;
+        margin-left:0;
+
+
     }
 
     .group1 .mail {
-        flex: 1 1 100%;
-        max-width: 90%;
-        text-align: left;
-        padding: 10px;
+        max-width: 100%;
     }
 
     .textmail {
         width: 100%;
-        padding: 0 10px;
         box-sizing: border-box;
     }
     
@@ -809,7 +850,7 @@ margin-right: 0;
         padding-top: 17px;
     }
 
-    .textmail h2, .textmail p {
+    .textmail p {
         text-align: left;
         word-wrap: break-word;
         font-size: 16px;
@@ -817,7 +858,10 @@ margin-right: 0;
         margin: 10px 0;
         max-width: 100%;
     }
+    .textmail h2{
+      font-size: 22px;
 
+    }
     .iconPro {
         max-width: 100%;
     }
