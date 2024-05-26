@@ -1,9 +1,9 @@
 <template>
-  <div id="app">
+<div id="app" :class="{ 'blurred': showProjects } ">
     <div :class="{ 'blurred': showProjects }">
       <Home @toggle-projects="showProjects = !showProjects" />
     </div>
-    <div v-if="showProjects" class="overlay">
+    <div v-if="showProjects" class="overlay ">
       <ProjectsView @close-projects="showProjects = false" />
     </div>
     <div id="circularcursor"></div>
@@ -62,6 +62,10 @@ document.addEventListener('click', function(e) {
 </script>
 
 <style>
+#app.blurred {
+  filter: blur(5px);
+}
+
 #clickcursor {
     background-color: #00000088;
     border: 3px solid #09de85;

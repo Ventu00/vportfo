@@ -1,9 +1,14 @@
 <template>
-  <div class="projects-view container">
+  <div class="projects-view container animate__animated animate__fadeInUp">
     <h1 class="text-center text-white my-4">Projects Gallery</h1>
-    <button @click="$emit('close-projects')" class="btn btn-secondary mb-4">Close</button>
+    <button @click="closeProjects" class="btn btn-outline-light mb-4">Close</button>
     <div class="row">
-      <div class="col-md-4 col-sm-6 mb-4" v-for="(project, index) in projects" :key="index" @click="showProjectDetail(index)">
+      <div 
+        class="col-md-4 col-sm-6 mb-4" 
+        v-for="(project, index) in projects" 
+        :key="index" 
+        @click="selectProject(project)"
+      >
         <div class="card h-100">
           <img :src="project.image" class="card-img-top" :alt="project.title">
           <div class="card-body">
@@ -22,21 +27,41 @@ export default {
   data() {
     return {
       projects: [
-        { title: 'Project 1', description: 'Description for project 1', image: './images/project1.jpg' },
-        { title: 'Project 2', description: 'Description for project 2', image: './images/project2.jpg' },
-        { title: 'Project 3', description: 'Description for project 3', image: './images/project3.jpg' },
+        { 
+          title: 'Project 1',
+          description: 'Description for project 1',
+          image: './images/btbm1.png',
+          initialProblem: 'Initial problem for project 1',
+          solution: 'Solution for project 1',
+          process: 'Process for project 1'
+        },
+        { 
+          title: 'Project 2',
+          description: 'Description for project 2',
+          image: './images/project2.jpg',
+          initialProblem: 'Initial problem for project 2',
+          solution: 'Solution for project 2',
+          process: 'Process for project 2'
+        },
+        { 
+          title: 'Project 3',
+          description: 'Description for project 3',
+          image: './images/project3.jpg',
+          initialProblem: 'Initial problem for project 3',
+          solution: 'Solution for project 3',
+          process: 'Process for project 3'
+        },
         // Agrega más proyectos según sea necesario
       ]
     }
   },
   methods: {
-    showProjectDetail(index) {
-      // Asegúrate de que this.$router esté definido antes de llamar a push
-      if (this.$router) {
-        this.$router.push({ name: 'ProjectDetail', params: { index } });
-      } else {
-        console.error('Vue Router no está disponible.');
-      }
+    selectProject(project) {
+      this.$emit('select-project', project); // Emitir el evento select-project
+    },
+    closeProjects() {
+      this.$emit('close-projects'); // Emitir el evento close-projects
+      
     }
   }
 }
@@ -49,9 +74,11 @@ export default {
 .card {
   background-color: #333;
   color: white;
+  border-radius: 30px;
 }
 .card img {
   height: 200px;
+  
   object-fit: cover;
 }
 </style>

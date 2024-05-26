@@ -1,17 +1,17 @@
 <template>
   <div class="all">
-    
+    <div class="blur-background" :class="{ 'blurred': showProjects }">
 
     <div class="margincont">
       <div class="container-fluid">
         <div class="row">
-          <div class="bar containerCom col-md-12">
+          <div class="bar containerCom col-md-12 animate__animated animate__fadeInDownBig">
             <p>navbar</p>
           </div>
         </div>
         <div class="row primer">
-          <div class="introcont col-md-9 col-sm-12">
-            <div class="intro">
+          <div class="introcont col-md-9 col-sm-12 animate__animated animate__fadeInTopLeft">
+            <div class="intro ">
               <div class="image-container">
                 <img src="./images/alex.png" class="img-fluid aleximg" alt="">
               </div>
@@ -23,82 +23,79 @@
             </div>
           </div>
 
-          <div class="lengcont col-md-4 col-sm-12">
+          <div class="lengcont col-md-4 col-sm-12 animate__animated  animate__fadeInTopLeft">
             <div class="lenguages">
               <!-- Aquí se pueden colocar las imágenes de los lenguajes -->
             </div>
           </div>
         </div>
 
-        <div class="col-md-12">
-          <div class="row groups">
-            <div class="group1 col-md-6">
+        <div class="col-md-12 ">
+          <div class="row groups ">
+            <div class="group1 col-md-6 animate__animated animate__fadeInTopLeft">
+              <div class="threeaps">
               <div class="row">
                 <div class="compdt1 col-md-4">
-                 <a href="https://github.com/Ventu00?tab=repositories" >
-                  <img class="iconPro img-fluid" src="./images/linkedin.png" alt="">
-
-                    <img src="./images/link.png" class="top-right-link" alt=" ">
+                  <a href="https://github.com/Ventu00?tab=repositories">
+                    <img class="iconPro img-fluid" src="./images/linkedin.png" alt="">
+                    <img src="./images/link.png" class="top-right-link" alt="">
                   </a>
                 </div>
-                <div class="compdt2 col-md-4 ">
-                  <a href="https://github.com/Ventu00?tab=repositories" >
+                <div class="compdt2 col-md-4">
+                  <a href="https://github.com/Ventu00?tab=repositories">
                     <img class="iconPro img-fluid" src="./images/github.png" alt="">
-
-                    <img src="./images/link.png" class="top-right-link" alt=" ">
+                    <img src="./images/link.png" class="top-right-link" alt="">
                   </a>
                 </div>
                 <div class="compdt3 col-md-4 img-fluid">
-                 
-                  <a class="cvtext" href="your-link-here" >
-                    <h2  >CV</h2>
-                  <img class="iconPro img-fluid" src="./images/download.png" alt="">
-                    <img src="./images/link.png" class="top-right-link" alt=" ">
+                  <a class="cvtext" href="your-link-here">
+                    <h2>CV</h2>
+                    <img class="iconPro img-fluid" src="./images/download.png" alt="">
+                    <img src="./images/link.png" class="top-right-link" alt="">
                   </a>
                 </div>
+              </div>
                 <div class="mail containerCom col-md-12">
                   <img class="iconPro mailImage img-fluid" src="./images/mail.png" alt="">
                   <div class="textmail">
                     <h2 class="titmail">Something on mind?</h2>
                     <p class="contentText maildir">alexventvv@gmail.com <img class="copyimage img-fluid" src="./images/copy.png" alt=""></p>
                     <a href="your-link-here" class="top-right-link">
-                      <img src="./images/link.png" alt=" ">
+                      <img src="./images/link.png" alt="">
                     </a>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="projects colcover containerComProject col-md-6 col-sm-12" @click="toggleProjects">
-    <video autoplay muted loop class="video-background">
-        <source src="./images/projectvideo.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-    <a href="your-link-here" class="top-right-go">
-        <img src="./images/go.png" alt="">
-    </a>
-    <h1>Projects</h1>
-    <p class="contentText">Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-</div>
-
-
+            <div class="projects colcover containerComProject col-md-6 col-sm-12 animate__animated  animate__fadeInTopLeft" @click="toggleProjects">
+              <video autoplay muted loop class="video-background">
+                <source src="./images/projectvideo.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <a href="your-link-here" class="top-right-go">
+                <img src="./images/go.png" alt="">
+              </a>
+              <h1>Projects</h1>
+              <p class="contentText">Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
           </div>
         </div>
         <div class="row">
-          <div class="col-md-12 map containerCom">
-<img src="./images/location.svg" class="img-fluid" alt="">          
-</div>
+          <div class="col-md-12 map containerCom animate__animated  animate__fadeInTopLeft">
+            <img src="./images/location.svg" class="img-fluid mapimg" alt="">
+          </div>
         </div>
         <div class="row">
           <div class="col-md-12">
-            <div class="row ">
-              <div class="col-md-12 slider-container">
+            <div class="row">
+              <div class="col-md-12 slider-container animate__animated  animate__fadeInTopLeft">
                 <div id="carouselExampleIndicators" class="carousel slide">
                   <div class="carousel-indicators">
                     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
                     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
                   </div>
-                  <div class="carousel-inner">
+                  <div class="carousel-inner ">
                     <div class="carousel-item active">
                       <img src="./images/ralarsa.png" class="imgSlider" alt="">
                       <div class="textSlider">
@@ -135,24 +132,58 @@
         </div>
         <div class="row">
           <div class="bar containerCom footer col-md-12">
-            <p>Àlex Ventrua</p>
+            <p>Àlex Ventura</p>
           </div>
         </div>
       </div>
     </div>
   </div>
+  </div>
+  <div v-if="showProjects && !selectedProject" class="overlay animate__animated animate__fadeIn">
+  <projects-view @close-projects="closeProjects" @select-project="showProjectDetail"></projects-view>
+</div>
+
+<div v-if="selectedProject !== null" class="overlay" >
+  <project-detail :project="selectedProject" @back-to-projects="backToProjects"></project-detail>
+</div>
+
+
+
 </template>
 
 <script>
+import ProjectsView from './projectsView.vue';
+import ProjectDetail from './ProjectDetail.vue';
+
 export default {
-  name: 'HomeView', // Cambiar el nombre del componente a una palabra compuesta
-  props: {
-    
+  name: 'HomeView',
+  components: {
+    ProjectsView,
+    ProjectDetail
   },
-  methods:{
-  toggleProjects() {
-      this.$emit('toggle-projects');
-    }
+  data() {
+    return {
+      showProjects: false,
+      selectedProject: null
+    };
+  },
+  methods: {
+    closeProjects() {
+    this.showProjects = false;
+    console.log("durum");
+  },
+    toggleProjects() {
+      this.showProjects = !this.showProjects;
+      this.selectedProject = null; // Reset selected project when toggling projects
+      
+    },
+    showProjectDetail(project) {
+      this.selectedProject = project;
+    },
+    backToProjects() {
+    console.log('Back to Projects button clicked');
+    this.selectedProject = null; // Limpiar el selectedProject
+  }
   },
   mounted() {
     const images = [
@@ -180,16 +211,53 @@ export default {
       skillsContainer.appendChild(img);
     });
 
-    // Script para el cursor personalizado
+    document.addEventListener("DOMContentLoaded", function() {
+  // Obtener el elemento div
+  var divElement = document.querySelector(".mailImage");
+
+  // Agregar evento click al div
+  divElement.addEventListener("click", function(event) {
+    // Verificar si se hizo clic en el div o en la imagen de copiar
+    if (event.target.classList.contains("copyimage")) {
+      // Obtener el correo electrónico
+      var email = document.querySelector(".maildir").textContent.trim();
+
+      // Si se hizo clic en la imagen de copiar
+      if (event.target.classList.contains("copyimage")) {
+        // Copiar el correo electrónico al portapapeles
+        navigator.clipboard.writeText(email).then(function() {
+          alert("Email copied to clipboard: " + email);
+        }, function() {
+          alert("Unable to copy email to clipboard");
+        });
+      } else {
+        // Si se hizo clic en el div, enviar correo electrónico
+        window.location.href = "mailto:alexventvv@gmail.com?subject=Subject&body=Body";
+      }
+    }
+  });
+});
 
   }
-
 }
+
+
 </script>
 
 <style scoped>
-
-
+.blurred {
+  filter: blur(5px);
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 90;
+  overflow-y: auto;
+}
 
 .cvtext{
   text-decoration: none;
@@ -571,12 +639,12 @@ color: #09DE85 ;
 
 
 @media (max-width: 1667px) {
-.copyimage{
+/* .copyimage{
   display: none;
-}
+} */
 
 .introtit{
-  font-size: 90px;
+  font-size: 55px;
 }
 .introtext{
 }
@@ -623,8 +691,10 @@ height:100%
     }
 
 }
-@media (max-width: 1277px) {
-
+@media (max-width: 1310px) {
+  .introtit{
+  font-size: 85px;
+}
   
   .image-container {
      display: none;
@@ -633,6 +703,22 @@ height:100%
 
 }
 @media (max-width: 1090px) {
+.map{
+  height: 110px;
+}
+.mapimg{
+  height:100%;
+  display: block;
+  background-size: cover; /* Hace que la imagen cubra todo el div */
+  background-position: center; /* Centra la imagen */
+}
+.threeaps{
+  margin-left: 27px;
+}
+  .margincont{
+        margin-left: 2;
+        margin-right: 2%;
+    }
 .compdt3 {
 margin-right: 0;
 }
@@ -708,7 +794,7 @@ margin-right: 0;
 
     .group1 .mail {
         flex: 1 1 100%;
-        max-width: 100%;
+        max-width: 90%;
         text-align: left;
         padding: 10px;
     }
