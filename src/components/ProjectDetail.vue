@@ -15,16 +15,25 @@
         <div class="project-info" :style="{ backgroundColor: contentBackgroundColor }">
           <div class="titdetail"><strong>Initial Problem:</strong></div>
           <div class="contdetai">
-            {{ project.initialProblem }}
+            <div class="textdet">
+              {{ project.initialProblem }}
+
+            </div>
           </div>
           <div class="titdetail"><strong>Solution:</strong></div> 
-          <div class="contdetai">
+          <div class="contdetai ">
+            <div class="textdet">
+
             {{ project.solution }}
+            </div>
             <button class="btn btnSolut"><img class="arrowbtn" src="./images/arrow.svg" alt=""></button>
           </div>
           <div class="titdetail"><strong>Process:</strong></div>
           <div class="contdetai">
+            <div class="textdet">
+
             {{ project.process }}
+            </div>
           </div>
         </div>
       </div>
@@ -83,7 +92,9 @@ export default {
   text-align: center; /* Opcional, ya que flexbox se encarga de centrar */
 }
 
-
+.textdet{
+  margin-right: 200px;
+}
 
 .contdetai {
   position: relative; /* Necesario para el posicionamiento absoluto del botón */
