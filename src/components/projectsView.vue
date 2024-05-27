@@ -36,7 +36,7 @@ export default {
           process: 'Hemos usado Scrum y diversos metodos de trabajo. Tambén hemos gestionado con git hub las diferentes partes del proyecto.'
         },
         { 
-          title: 'Project 2',
+          title: 'El mon de la Laia',
           description: 'Description for project 2',
           image: './images/project2.jpg',
           initialProblem: 'Initial problem for project 2',
@@ -44,7 +44,7 @@ export default {
           process: 'Process for project 2'
         },
         { 
-          title: 'Project 3',
+          title: 'Pokedex',
           description: 'Description for project 3',
           image: './images/project3.jpg',
           initialProblem: 'Initial problem for project 3',
