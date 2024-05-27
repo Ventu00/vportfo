@@ -32,8 +32,8 @@ export default {
           description: 'Una aplicación solidaria con mapa interactivo',
           image: 'public/src/assets/go.png',
           initialProblem: 'Se nos planteó un problema: ¿Como ayudar a la gente necesitada de la calle de durante el dia a dia?',
-          solution: 'Para ello, yo y mi equipo hicimos una aplicacion con mapa interactivo donde puedes hacer reservas a restaurantes donantes i ver lugares donde puedes donar',
-          process: 'Hemos usado Scrum y diversos metodos de trabajo. Tambén hemos gestionado con git hub las diferentes partes del proyecto.'
+          "solution": "Para ello, yo y mi equipo hicimos una aplicacion con mapa interactivo donde puedes hacer reservas a restaurantes donantes\ni ver lugares donde puedes donar",
+                    process: 'Hemos usado Scrum y diversos metodos de trabajo. Tambén hemos gestionado con git hub las diferentes partes del proyecto.'
         },
         { 
           title: 'El mon de la Laia',
