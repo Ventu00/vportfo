@@ -36,7 +36,7 @@
               <div class="threeaps">
               <div class="row">
                 <div class="compdt1 col-md-4">
-                  <a href="https://github.com/Ventu00?tab=repositories">
+                  <a href="https://linkedin.com">
                     <img class="iconPro img-fluid" src="./images/linkedin.svg" alt="">
                     <img src="./images/link.png" class="top-right-link" alt="">
                   </a>
