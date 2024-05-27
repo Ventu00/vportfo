@@ -48,7 +48,7 @@
                   </a>
                 </div>
                 <div class="compdt3 col-md-4 img-fluid">
-                  <a class="cvtext" href="your-link-here">
+                  <a class="cvtext" href="https://drive.google.com/file/d/1u95BsQCQBN79v5HvjSdATEhrmmVxFkcT/view?usp=sharing">
                     <h1>CV</h1>
                     <img class="iconPro img-fluid" src="./images/download.png" alt="">
                     <img src="./images/link.png" class="top-right-link" alt="">
