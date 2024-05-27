@@ -42,6 +42,7 @@ export default {
     image: 'laia.png',
     initialProblem: 'As a group of developers, we embarked on a project consisting of 4 mini web games using JavaScript.',
     solution: 'My contribution to the project was a game tailored for 11-year-old children, requiring players to count the running children on the screen. Players must use the spacebar to count them, and upon completing a level, the game displays the number of children who passed and how many times the spacebar was pressed.',
+    link:"https://github.com/pizza2223/M12.git",
     process: 'Throughout the development process, we collaborated as a team of programmers to brainstorm ideas, design the game mechanics, and implement the features. We iteratively tested and refined the game to ensure an engaging and educational experience for our target audience.'
   },
   { 
@@ -50,7 +51,9 @@ export default {
     image: 'poke.png',
     initialProblem: 'The challenge we faced with project 3 was creating a comprehensive Pokemon management application.',
     solution: 'To address this challenge, we utilized the PokeAPI to fetch and display Pokemon data, and Vue.js for the frontend development. Our solution allows users to manage their teams, favorite Pokemon, and explore various other functionalities related to the Pokemon universe.',
+    link:"https://github.com/Ventu00/pokedex.git",
     process: 'During the development process, we seamlessly integrated the PokeAPI into our application, ensuring smooth data retrieval and manipulation. Additionally, we leveraged the capabilities of Vue.js to create an intuitive and responsive user interface. We iteratively tested and refined the application to ensure optimal performance and user experience.'
+  
   },
   { 
   title: 'Dungeons',
@@ -58,6 +61,7 @@ export default {
   image: 'dungeons.png',
   initialProblem: 'The challenge we encountered with this project was to create an engaging game experience using Java Swing.',
   solution: 'To address this challenge, we utilized Java Swing for graphical user interface development and implemented various game mechanics such as enemy evasion and item collection. Our game allows players to navigate through dungeons, avoiding enemies while collecting items and coins scattered throughout the map.',
+  link:"https://github.com/Ventu00/RolePlayJava.git",
   process: 'Throughout the development process, we employed different techniques in Java programming to implement the game mechanics effectively. We iteratively tested and refined the game to ensure smooth gameplay and an immersive experience for players.'
 },
 { 
@@ -66,11 +70,12 @@ export default {
   image: 'evaluation.png',
   initialProblem: 'The challenge we faced with this project was to develop a user-friendly self-assessment platform with secure database integration.',
   solution: 'To address this challenge, we employed Vue.js for frontend development and Laravel for backend operations, ensuring seamless communication with the database. Additionally, we integrated APIs for database interaction, leveraging Postman and Axios for efficient data retrieval and management. Our application provides an intuitive interface for admin users to perform CRUD operations, allows teacher users to access student grades, and offers a self-assessment page for users to review criteria and publish their evaluations.',
+  link:"https://github.com/Ventu00/autoavaluacio_alexventuravilalta.git",
+
   process: 'Throughout the development process, we utilized various techniques in Vue.js and Laravel to implement the desired functionalities effectively. We conducted thorough testing and validation to ensure data security, smooth user experience, and optimal performance of the application.'
 }
 
 
-        // Agrega más proyectos según sea necesario
       ]
     }
   },
