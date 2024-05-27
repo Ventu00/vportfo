@@ -1,12 +1,14 @@
 <template>
+  <div class="home-view" :class="{ 'fixed': showProjects || selectedProject !== null }">
+
   <div class="all">
     <div class="blur-background" :class="{ 'blurred': showProjects }">
 
     <div class="margincont">
       <div class="container-fluid">
         <div class="row">
-          <div class="bar containerCom col-md-12 animate__animated animate__fadeInDownBig">
-            <p>navbar</p>
+          <div class="bar footer containerCom col-md-12 animate__animated animate__fadeInDownBig">
+            <p>Àlex Ventura</p>
           </div>
         </div>
         <div class="row primer">
@@ -18,7 +20,7 @@
               <div class="text-container">
                 <h1 class="introtext introtit">Àlex Ventura</h1>
                 <h2 class="greenText introtext">IT Specialist & Web developer</h2>
-                <p class="contentText introtext">Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br> Lorem ipsum sit amet, consectetur adipis</p>
+                <p class="contentText introtext">I am passionate about creating effective solutions that address complex problems. Additionally, I am committed to continuous learning to stay at the forefront of the latest technologies.</p>
               </div>
             </div>
           </div>
@@ -55,16 +57,16 @@
                   </a>
                 </div>
               </div>
-                <div class="mail containerCom col-md-12">
-                  <img class="iconPro mailImage img-fluid" src="./images/mail.png" alt="">
-                  <div class="textmail">
-                    <h2 class="titmail">Something on mind?</h2>
-                    <p class="contentText maildir">alexventvv@gmail.com <img class="copyimage img-fluid" src="./images/copy.png" alt=""></p>
-                    <a href="your-link-here" class="top-right-link">
-                      <img src="./images/link.png" alt="">
-                    </a>
-                  </div>
-                </div>
+              <div class="mail containerCom col-md-12">
+    <img class="iconPro mailImage img-fluid" src="./images/mail.png" alt="">
+    <div class="textmail">
+      <h2 class="titmail">Something on mind?</h2>
+      <p class="contentText maildir">alexventvv@gmail.com <img class="copyimage img-fluid" src="./images/copy.png" alt=""></p>
+      <a href="#" class="top-right-link">
+        <img src="./images/link.png" alt="">
+      </a>
+    </div>
+  </div>
               </div>
             </div>
             <div class="projects colcover containerComProject col-md-6 col-sm-12 animate__animated  animate__fadeInTopLeft" @click="toggleProjects">
@@ -77,7 +79,7 @@
               </a>
               <div class="conTxtProj">
                 <h1>Projects</h1>
-              <p class="contentText">Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              <p class="contentText">Explore my creations and see how I transform ideas into effective and functional solutions.</p>
               </div>
              
             </div>
@@ -96,7 +98,7 @@
                   <div class="carousel-indicators">
                     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    <!-- <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button> -->
                   </div>
                   <div class="carousel-inner ">
                     <div class="carousel-item active">
@@ -104,16 +106,27 @@
                       <div class="textSlider">
                         <h2><span class="green-text">IT Specialist</span> in <span class="white-text">Ralarsa</span></h2>
                         <h3>2020-2021</h3>
-                        <p class="contentText">Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet,<br> consectetur adipiscing elit.</p>
+                        <p class="contentText">  Provided technical support to departments and workshops, resolving<br> hardware and software issues efficiently.
+  Installed and configured <br>new Windows and Linux operating systems, ensuring smooth operations.<br>
+  Handled both physical and remote troubleshooting for Windows and Linux systems.</p>
                       </div>
                     </div>
                     <div class="carousel-item">
-                      <img src="" class="d-block w-100" alt="">
+                      <img src="./images/nvpm.png" class="imgSlider pnvimg" alt="">
+
+                      <div class="textSlider">
+                        <h2><span class="green-text">CMS Developer</span> in <span class="white-text">Perfumery Nuria Vilalta</span></h2>
+                        <h3>2023</h3>
+                        <p class="contentText">
+I developed and managed a CMS page using WordPress for Perfumery Núria Vilalta, aimed at establishing their online presence.</p>
+                      </div>
+                      
+
                     </div>
-                    <div class="carousel-item">
+                    <!-- <div class="carousel-item">
                       
                       <img src="" class="d-block w-100" alt="">
-                    </div>
+                    </div> -->
                   </div>
                   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true">
@@ -149,7 +162,7 @@
   <project-detail :project="selectedProject" @back-to-projects="backToProjects"></project-detail>
 </div>
 
-
+    </div>
 
 </template>
 
@@ -170,6 +183,10 @@ export default {
     };
   },
   methods: {
+    sendEmail() {
+      const email = 'alexventvv@gmail.com';
+      window.location.href = `mailto:${email}?subject=Subject&body=Body`;
+    },
     closeProjects() {
     this.showProjects = false;
     console.log("durum");
@@ -215,27 +232,24 @@ export default {
 
     document.addEventListener("DOMContentLoaded", function() {
   // Obtener el elemento div
-  var divElement = document.querySelector(".mailImage");
+  var divElement = document.querySelector(".mail");
 
   // Agregar evento click al div
   divElement.addEventListener("click", function(event) {
-    // Verificar si se hizo clic en el div o en la imagen de copiar
-    if (event.target.classList.contains("copyimage")) {
-      // Obtener el correo electrónico
-      var email = document.querySelector(".maildir").textContent.trim();
+    // Obtener el correo electrónico
+    var email = document.querySelector(".maildir").textContent.trim();
 
-      // Si se hizo clic en la imagen de copiar
-      if (event.target.classList.contains("copyimage")) {
-        // Copiar el correo electrónico al portapapeles
-        navigator.clipboard.writeText(email).then(function() {
-          alert("Email copied to clipboard: " + email);
-        }, function() {
-          alert("Unable to copy email to clipboard");
-        });
-      } else {
-        // Si se hizo clic en el div, enviar correo electrónico
-        window.location.href = "mailto:alexventvv@gmail.com?subject=Subject&body=Body";
-      }
+    // Si se hizo clic en la imagen de copiar
+    if (event.target.classList.contains("copyimage")) {
+      // Copiar el correo electrónico al portapapeles
+      navigator.clipboard.writeText(email).then(function() {
+        alert("Email copied to clipboard: " + email);
+      }, function() {
+        alert("Unable to copy email to clipboard");
+      });
+    } else {
+      // Si se hizo clic en cualquier lugar dentro del div, enviar correo electrónico
+      window.location.href = "mailto:" + email + "?subject=Subject&body=Body";
     }
   });
 });
@@ -247,6 +261,16 @@ export default {
 </script>
 
 <style scoped>
+.fixed {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+.pnvimg{
+  max-width: 500px;
+  max-height: 285px;
+  border-radius:30px;
+}
 
 .projects {
   position: relative;
@@ -562,6 +586,8 @@ color: #09DE85 ;
     float: left;
     margin-right: 40px;
     height: 100%;
+    border-radius:30px;
+
 }
 
 .slider-container {
@@ -745,6 +771,12 @@ height:100%
 
 }
 @media (max-width: 1090px) {
+
+
+  .top-right-go {
+display: none;
+}
+
 .map{
   height: 110px;
 }

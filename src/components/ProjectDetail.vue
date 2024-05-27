@@ -8,14 +8,17 @@
         <div class="titdetail">
           <h1 class="card-title">{{ project.title }}</h1>
         </div>
+        <div class="imgcontpro">
+        <img :src="project.image" class="img-fluid card-img-top" :alt="project.title">
+      </div>
 
-        <img :src="project.image" class="card-img-top" :alt="project.title">
+
 
         <!-- <p class="card-text">{{ project.description }}</p> -->
         <div class="project-info" :style="{ backgroundColor: contentBackgroundColor }">
           <div class="titdetail"><strong>Initial Problem:</strong></div>
           <div class="contdetai">
-            <div class="textdet">
+            <div class="">
               {{ project.initialProblem }}
 
             </div>
@@ -26,11 +29,11 @@
 
             {{ project.solution }}
             </div>
-            <button class="btn btnSolut"><img class="arrowbtn" src="./images/arrow.svg" alt=""></button>
+            <a :href="project.link" class="btn btnSolut"><img class="arrowbtn" src="./images/arrow.svg" alt=""></a>
           </div>
           <div class="titdetail"><strong>Process:</strong></div>
           <div class="contdetai">
-            <div class="textdet">
+            <div class="">
 
             {{ project.process }}
             </div>
@@ -56,6 +59,7 @@ export default {
         description: '',
         initialProblem: '',
         solution: '',
+        link: '',
         process: ''
       })
     }
@@ -69,6 +73,21 @@ export default {
 </script>
 
 <style scoped>
+
+.imgcontpro {
+  height: 610px; /* or any other desired height */
+  width: 100%; /* Ensure it takes full width */
+}
+
+.imgcontpro img {
+  width: 100%;
+  min-height: 610px;
+  object-fit: cover;
+}
+
+
+
+
 .btnSolut {
   position: absolute;
   right: 0;
@@ -86,15 +105,18 @@ export default {
 }
 
 .arrowbtn {
+
   padding: 15px; /* Remueve el padding del elemento img */
   width: 100%; /* Ajusta el ancho de la imagen según necesites */
   height: auto; /* Mantiene la proporción de la imagen */
   text-align: center; /* Opcional, ya que flexbox se encarga de centrar */
 }
 
-.textdet{
-  margin-right: 200px;
+.textdet {
+  max-width: calc(100% - 113px); /* Ajusta este valor según el ancho del botón más un margen adicional */
+  /* Otros estilos que desees aplicar al texto */
 }
+
 
 .contdetai {
   position: relative; /* Necesario para el posicionamiento absoluto del botón */
