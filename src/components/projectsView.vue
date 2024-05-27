@@ -30,10 +30,10 @@ export default {
         { 
           title: 'Bitiby',
           description: 'Una aplicación solidaria con mapa interactivo',
-          image: './images/btbm1.png',
-          initialProblem: 'Initial problem for project 1',
-          solution: 'Solution for project 1',
-          process: 'Process for project 1'
+          image: 'public/src/assets/go.png',
+          initialProblem: 'Se nos planteó un problema: ¿Como ayudar a la gente necesitada de la calle de durante el dia a dia?',
+          solution: 'Para ello, yo y mi equipo hicimos una aplicacion con mapa interactivo donde puedes hacer reservas a restaurantes donantes i ver lugares donde puedes donar',
+          process: 'Hemos usado Scrum y diversos metodos de trabajo. Tambén hemos gestionado con git hub las diferentes partes del proyecto.'
         },
         { 
           title: 'Project 2',
