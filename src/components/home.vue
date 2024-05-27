@@ -108,11 +108,10 @@
                       </div>
                     </div>
                     <div class="carousel-item">
-                      aaaaaaaa
                       <img src="" class="d-block w-100" alt="">
                     </div>
                     <div class="carousel-item">
-                      aaaaaaa
+                      
                       <img src="" class="d-block w-100" alt="">
                     </div>
                   </div>
