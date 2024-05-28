@@ -157,4 +157,35 @@ export default {
   height: 200px;
   object-fit: cover;
 }
+
+
+
+@media (max-width: 1090px) {
+  #circularcursor{
+    display: none;
+
+  }
+  .circularcursor{
+    display: none;
+
+  }
+
+  #clickcursor {
+    display: none;
+}
+.card-title{
+  font-size: 60px;
+}
+.imgcontpro {
+  height: 210px; /* or any other desired height */
+  width: 100%; /* Ensure it takes full width */
+}
+
+.imgcontpro img {
+  width: 100%;
+  min-height: 210px;
+  object-fit: cover;
+}
+
+}
 </style>

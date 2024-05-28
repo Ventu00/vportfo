@@ -129,4 +129,20 @@ body {
   z-index: 90;
   overflow-y: auto;
 }
+
+
+@media (max-width: 1090px) {
+  #circularcursor{
+    display: none;
+
+  }
+  .circularcursor{
+    display: none;
+
+  }
+
+  #clickcursor {
+    display: none;
+}
+}
 </style>

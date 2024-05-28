@@ -591,21 +591,26 @@ color: #09DE85 ;
 }
 
 .slider-container {
+  cursor: none !important;
   margin: 0;
     width: 100%;
     background-color: #181818;
 
 }
 .slider-container{
+  cursor: none !important;
+
     padding-left: 0;}
 
 .carousel-inner{
+  cursor: none !important;
+
   margin: 0;
     padding: 0;
 }
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
-    cursor: none;
+  cursor: none !important;
     background-image: none; /* Elimina el ícono por defecto */
     background-color: #09DE85; /* Fondo verde del círculo */
     border: 2px solid #09DE85; /* Borde verde alrededor del ícono */
@@ -623,24 +628,24 @@ color: #09DE85 ;
 
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
-    cursor: none;
+  cursor: none !important;
 
 }
 .carousel-control-next{
-    cursor: none;
+  cursor: none !important;
 
 }
 
 
 [type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled) {
-    cursor: none;
+  cursor: none !important;
 }
 
 
 
 .carousel-control-prev,
 .carousel-control-next {
-    cursor: none;
+  cursor: none !important;
 
     width: 5%; /* Ajusta el ancho de los controles si es necesario */
 }
@@ -648,9 +653,11 @@ color: #09DE85 ;
 .carousel-item{
     background-color: #181818;
     border-radius: 20px;
+    cursor: none !important;
+
 }
 .carousel-indicators button {
-    cursor: none;
+  cursor: none !important;
 
     width: 5px; /* Ancho del indicador */
     height: 10px; /* Alto del indicador */
@@ -771,7 +778,21 @@ height:100%
 
 }
 @media (max-width: 1090px) {
+  body{
+    cursor: none !important;
+  }
+  #circularcursor{
+    display: none;
 
+  }
+  .circularcursor{
+    display: none;
+
+  }
+
+  #clickcursor {
+    display: none;
+}
 
   .top-right-go {
 display: none;
