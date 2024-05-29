@@ -15,7 +15,7 @@
           <div class="introcont col-md-9 col-sm-12 animate__animated animate__fadeInTopLeft">
             <div class="intro ">
               <div class="image-container">
-                <img src="./images/alex.png" class="img-fluid aleximg" alt="">
+                <img src="./images/alex.png" class="img-fluid aleximg" alt="Imagen de Àlex Ventura">
               </div>
               <div class="text-container">
                 <h1 class="introtext introtit">Àlex Ventura</h1>
@@ -39,34 +39,34 @@
               <div class="row">
                 <div class="compdt1 col-md-4">
                   <a href="https://linkedin.com">
-                    <img class="iconPro img-fluid" src="./images/linkedin.svg" alt="">
-                    <img src="./images/link.png" class="top-right-link" alt="">
+                    <img class="iconPro img-fluid" src="./images/linkedin.svg" alt="LinkedIn">
+                    <img src="./images/link.png" class="top-right-link" alt="Link icon">
                   </a>
                 </div>
                 <div class="compdt2 col-md-4">
                   <a href="https://github.com/Ventu00?tab=repositories">
-                    <img class="iconPro img-fluid" src="./images/github.svg" alt="">
-                    <img src="./images/link.png" class="top-right-link" alt="">
+                    <img class="iconPro img-fluid" src="./images/github.svg" alt="GitHub">
+                    <img src="./images/link.png" class="top-right-link" alt="Link icon">
                   </a>
                 </div>
                 <div class="compdt3 col-md-4 img-fluid">
                   <a class="cvtext" href="https://drive.google.com/file/d/1u95BsQCQBN79v5HvjSdATEhrmmVxFkcT/view?usp=sharing">
                     <h1>CV</h1>
-                    <img class="iconPro img-fluid" src="./images/download.png" alt="">
-                    <img src="./images/link.png" class="top-right-link" alt="">
+                    <img class="iconPro img-fluid" src="./images/download.png" alt="Download CV">
+                    <img src="./images/link.png" class="top-right-link" alt="Link icon">
                   </a>
                 </div>
               </div>
               <div class="mail containerCom col-md-12">
-    <img class="iconPro mailImage img-fluid" src="./images/mail.png" alt="">
-    <div class="textmail">
-      <h2 class="titmail">Something on mind?</h2>
-      <p class="contentText maildir">alexventvv@gmail.com <img class="copyimage img-fluid" src="./images/copy.png" alt=""></p>
-      <a href="#" class="top-right-link">
-        <img src="./images/link.png" alt="">
-      </a>
-    </div>
-  </div>
+                <img class="iconPro mailImage img-fluid" src="./images/mail.png" alt="Email icon">
+                <div class="textmail">
+                  <h2 class="titmail">Something on mind?</h2>
+                  <p class="contentText maildir">alexventvv@gmail.com <img class="copyimage img-fluid" src="./images/copy.png" alt="Copy icon"></p>
+                  <a href="#" class="top-right-link">
+                    <img src="./images/link.png" alt="Link icon">
+                  </a>
+                </div>
+              </div>
               </div>
             </div>
             <div class="projects colcover containerComProject col-md-6 col-sm-12 animate__animated  animate__fadeInTopLeft" @click="toggleProjects">
@@ -75,11 +75,11 @@
                 Your browser does not support the video tag.
               </video>
               <a href="your-link-here" class="top-right-go">
-                <img src="./images/go.png" alt="">
+                <img src="./images/go.png" alt="Go icon">
               </a>
               <div class="conTxtProj">
                 <h1>Projects</h1>
-              <p class="contentText">Explore my creations and see how I transform ideas into effective and functional solutions.</p>
+                <p class="contentText">Explore my creations and see how I transform ideas into effective and functional solutions.</p>
               </div>
              
             </div>
@@ -87,7 +87,7 @@
         </div>
         <div class="row">
           <div class="col-md-12 map containerCom animate__animated  animate__fadeInTopLeft">
-            <img src="./images/mark.svg" alt="">
+            <img src="./images/mark.svg" alt="Map marker icon">
           </div>
         </div>
         <div class="row">
@@ -102,7 +102,7 @@
                   </div>
                   <div class="carousel-inner ">
                     <div class="carousel-item active">
-                      <img src="./images/ralarsa.png" class="imgSlider" alt="">
+                      <img src="./images/ralarsa.png" class="imgSlider" alt="Ralarsa IT Specialist">
                       <div class="textSlider">
                         <h2><span class="green-text">IT Specialist</span> in <span class="white-text">Ralarsa</span></h2>
                         <h3>2020-2021</h3>
@@ -112,13 +112,12 @@
                       </div>
                     </div>
                     <div class="carousel-item">
-                      <img src="./images/nvpm.png" class="imgSlider pnvimg" alt="">
+                      <img src="./images/nvpm.png" class="imgSlider pnvimg" alt="Perfumery Nuria Vilalta CMS Developer">
 
                       <div class="textSlider">
                         <h2><span class="green-text">CMS Developer</span> in <span class="white-text">Perfumery Nuria Vilalta</span></h2>
                         <h3>2023</h3>
-                        <p class="contentText">
-I developed and managed a CMS page using WordPress for Perfumery Núria Vilalta, aimed at establishing their online presence.</p>
+                        <p class="contentText">I developed and managed a CMS page using WordPress for Perfumery Núria Vilalta, aimed at establishing their online presence.</p>
                       </div>
                       
 
@@ -130,13 +129,13 @@ I developed and managed a CMS page using WordPress for Perfumery Núria Vilalta,
                   </div>
                   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true">
-                      <img src="./images/left.png" alt="">
+                      <img src="./images/left.png" alt="Previous slide icon">
                     </span>
                     <span class="visually-hidden">Previous</span>
                   </button>
                   <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true">
-                      <img src="./images/rigth.png" alt="">
+                      <img src="./images/rigth.png" alt="Next slide icon">
                     </span>
                     <span class="visually-hidden">Next</span>
                   </button>
@@ -155,16 +154,17 @@ I developed and managed a CMS page using WordPress for Perfumery Núria Vilalta,
   </div>
   </div>
   <div v-if="showProjects && !selectedProject" class="overlay animate__animated animate__fadeIn">
-  <projects-view @close-projects="closeProjects" @select-project="showProjectDetail"></projects-view>
-</div>
+    <projects-view @close-projects="closeProjects" @select-project="showProjectDetail"></projects-view>
+  </div>
 
-<div v-if="selectedProject !== null" class="overlay" >
-  <project-detail :project="selectedProject" @back-to-projects="backToProjects"></project-detail>
-</div>
+  <div v-if="selectedProject !== null" class="overlay" >
+    <project-detail :project="selectedProject" @back-to-projects="backToProjects"></project-detail>
+  </div>
 
     </div>
 
 </template>
+
 
 <script>
 import ProjectsView from './projectsView.vue';
