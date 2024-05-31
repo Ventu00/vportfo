@@ -15,7 +15,7 @@
           <div class="introcont col-md-9 col-sm-12 animate__animated animate__fadeInTopLeft">
             <div class="intro ">
               <div class="image-container">
-                <img src="./images/alex.png" class="img-fluid aleximg" alt="Imagen de Àlex Ventura">
+                <img src="./images/alex.svg" class="img-fluid aleximg" alt="Imagen de Àlex Ventura">
               </div>
               <div class="text-container">
                 <h1 class="introtext introtit">Àlex Ventura</h1>
@@ -39,7 +39,7 @@
               <div class="row">
                 <div class="compdt1 col-md-4">
                   <a href="https://linkedin.com">
-                    <img class="iconPro img-fluid" src="./images/linkedin.svg" alt="LinkedIn">
+                    <img class="iconPro img-fluid" src="./images/linked.svg" alt="LinkedIn">
                     <img src="./images/link.png" class="top-right-link" alt="Link icon">
                   </a>
                 </div>
@@ -351,7 +351,7 @@ body{
 .col-md-2,
 .col-md8,
 .col-sm-12{
-    border-radius: 25px;
+    border-radius: 15px;
     color:rgb(255, 255, 255);
     margin-top: 10px;
 }
@@ -393,7 +393,7 @@ color: #BCBCBC;
 }
 
 .greenText{
-color: #09DE85 ;
+color: #09de97 ;
 }
 
 .introtext{
@@ -488,7 +488,7 @@ color: #09DE85 ;
 .col-md-8,
 .col-md-4 {
     background-color: #1a1a1af0;
-    border-radius: 25px;
+    border-radius: 15px;
     color: rgb(255, 255, 255);
 
 }
@@ -518,7 +518,8 @@ color: #09DE85 ;
 
 
 .mail{
-  margin-left: 0;
+
+  margin-left: -2%;
     flex: 0 0 100%; /* Para que ocupe 1/3 del ancho */
     max-width: 100%;
     display: flex;
@@ -536,7 +537,7 @@ color: #09DE85 ;
 }
 
 .projects:hover, .compdt1:hover, .compdt2:hover, .compdt3:hover, .mail:hover, .lengcont:hover, .introcont:hover, .map:hover, .slider-container:hover {
-    border: 2px solid #09de85; /* Borde verde al pasar el mouse sobre el div */
+    border: 2px solid #09de97; /* Borde verde al pasar el mouse sobre el div */
 }
 
 
@@ -575,7 +576,7 @@ color: #09DE85 ;
 }
 
 .green-text {
-    color: #09DE85;
+    color: #09de97;
 }
 
 .white-text {
@@ -612,8 +613,8 @@ color: #09DE85 ;
 .carousel-control-next-icon {
   cursor: none !important;
     background-image: none; /* Elimina el ícono por defecto */
-    background-color: #09DE85; /* Fondo verde del círculo */
-    border: 2px solid #09DE85; /* Borde verde alrededor del ícono */
+    background-color: #09de97; /* Fondo verde del círculo */
+    border: 2px solid #09de97; /* Borde verde alrededor del ícono */
     border-radius: 50%; /* Hacer el borde redondo */
     padding: 15px; /* Espacio alrededor del ícono dentro del borde */
     width: 70px; /* Ancho del círculo */
@@ -652,7 +653,7 @@ color: #09DE85 ;
 
 .carousel-item{
     background-color: #181818;
-    border-radius: 20px;
+    border-radius: 15px;
     cursor: none !important;
 
 }
@@ -833,7 +834,7 @@ margin-right: 0;
         transition: height 0.6s, width 0.6s;
     }
     .imgSlider{
-        border-radius: 20px;
+        border-radius: 15px;
         width: 100%;
         overflow: hidden;
         margin-right: 0;
@@ -1028,7 +1029,7 @@ margin-right: 0;
 
 #circularcursor {
     background-color: #00000088;
-    border: 3px solid #09de85;
+    border: 3px solid #09de97;
     height: 40px;
     width: 40px;
     border-radius: 50%;
@@ -1040,7 +1041,7 @@ margin-right: 0;
 
 #clickcursor {
     background-color: #00000088;
-    border: 3px solid #09de85;
+    border: 3px solid #09de97;
         height: 10px;
     width: 10px;
     border-radius: 50%;
@@ -1054,7 +1055,7 @@ margin-right: 0;
 .clickable {
     cursor: none;
     background-color: #00000088;
-    border: 3px solid #09de85;
+    border: 3px solid #09de97;
     height: 20px;
     width: 20px;
     border-radius: 50%;
