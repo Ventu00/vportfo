@@ -718,7 +718,9 @@ color: #09de97 ;
 
 
 .aleximg{
-  width: 320px;
+  width: 240px;
+  margin-left:-12%;
+  margin-right: 5px;
 }
 
   .text-container{
