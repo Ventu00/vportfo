@@ -711,7 +711,7 @@ color: #09de97 ;
 } */
 
 .introtit{
-  font-size: 55px;
+  font-size: 65px;
 }
 .introtext{
 }
