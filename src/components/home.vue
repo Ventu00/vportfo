@@ -38,19 +38,19 @@
               <div class="threeaps">
               <div class="row">
                 <div class="compdt1 col-md-4">
-                  <a href="https://linkedin.com">
+                  <a href="https://www.linkedin.com/in/%C3%A0lex-ventura-vilalta-491607271/" target="_blank">
                     <img class="iconPro img-fluid" src="./images/linked.svg" alt="LinkedIn">
                     <img src="./images/link.png" class="top-right-link" alt="Link icon">
                   </a>
                 </div>
                 <div class="compdt2 col-md-4">
-                  <a href="https://github.com/Ventu00?tab=repositories">
+                  <a href="https://github.com/Ventu00?tab=repositories" target="_blank">
                     <img class="iconPro img-fluid" src="./images/github.svg" alt="GitHub">
                     <img src="./images/link.png" class="top-right-link" alt="Link icon">
                   </a>
                 </div>
                 <div class="compdt3 col-md-4 img-fluid">
-                  <a class="cvtext" href="https://drive.google.com/file/d/1u95BsQCQBN79v5HvjSdATEhrmmVxFkcT/view?usp=sharing">
+                  <a class="cvtext" href="https://drive.google.com/file/d/1u95BsQCQBN79v5HvjSdATEhrmmVxFkcT/view?usp=sharing" target="_blank">
                     <h1>CV</h1>
                     <img class="iconPro img-fluid" src="./images/download.png" alt="Download CV">
                     <img src="./images/link.png" class="top-right-link" alt="Link icon">
@@ -206,6 +206,8 @@ export default {
   },
   mounted() {
     const images = [
+      "api.svg",
+      "mapbox.svg",
       "image 46.png",
       "image 47.png",
       "image 48.png",
@@ -477,13 +479,7 @@ color: #09de97 ;
     max-width: 80.66667%;
 }
 
-.lengcont {
-    flex: 0 0 25.33333%; /* Para que ocupe 1/3 del ancho */
-    max-width: 33.33333%;
-    margin-left: 14px; /* Separación entre columnas */
-    align-items: center;
-    text-align: center;
-}
+
 
 .col-md-8,
 .col-md-4 {
@@ -690,10 +686,22 @@ color: #09de97 ;
 .skills{
     padding: 15px;
     width: 84px;
+
+}
+.lengcont {
+    flex: 0 0 25.33333%; /* Para que ocupe 1/3 del ancho */
+    max-width: 33.33333%;
+    margin-left: 14px; /* Separación entre columnas */
+    align-items: center;
+    text-align: center;
+    overflow:hidden;
+    max-height:450px;
+
 }
 
 .lenguages{
-
+  overflow: auto; /* Hace que el div sea scrollable cuando el contenido excede su tamaño */
+  max-height: 310px;
     padding: 5px;
     overflow-y: auto;
 }
@@ -752,6 +760,8 @@ height:100%
     .lengcont {
         flex: 0 0 100%; /* Cambiar a ancho completo en dispositivos móviles */
         max-width: 30%;
+        max-height:405px;
+
     }
 
     .margincont{
@@ -769,7 +779,19 @@ height:100%
 }
 
 }
-@media (max-width: 1310px) {
+@media (max-width: 1450px) {
+  .lengcont {
+        flex: 0 0 100%; /* Cambiar a ancho completo en dispositivos móviles */
+        max-width: 30%;
+        max-height:485px;
+
+    }
+    .lenguages{
+
+      max-height: 375px;
+
+    }
+
   .introtit{
   font-size: 85px;
 }
@@ -940,10 +962,12 @@ margin-right: 0;
         flex: 0 0 100%; /* Cambiar a ancho completo en dispositivos móviles */
         max-width: 100%;
         margin-left: 0; /* Eliminar margen para que ocupe todo el ancho */
+        max-height: 200px;
     }
 
     .lenguages{
         width: 100%;
+        height: 100%;
     }
     .skills{
         padding: 15px;

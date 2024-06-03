@@ -1,9 +1,9 @@
 <template>
   <div class="project-detail container animate__animated animate__fadeIn">
     <br>
-    <button @click="backToProjects" class="btn btn-outline-light mb-4">Back to Projects</button>
     <div v-if="project" class="card h-100" :style="{ backgroundColor: projectBackgroundColor }">
       <div class="card-body">
+        <button @click="backToProjects" class="btn goback mb-4"></button>
 
         <div class="titdetail">
           <h1 class="card-title">{{ project.title }}</h1>
@@ -73,7 +73,27 @@ export default {
 </script>
 
 <style scoped>
+        .goback {
+          position:fixed;
+          z-index: 1111;
+            background-image: url('goback.svg');
+            background-size: contain; /* Asegura que la imagen se ajuste dentro del botón */
+            background-repeat: no-repeat; /* Evita que la imagen se repita */
+            background-position: center; /* Centra la imagen en el botón */
+            cursor: none; /* El cursor debe ser pointer para los botones */
+            padding: 10px 20px; /* Espaciado interno del botón */
+            border: none; /* Sin borde */
+            border-radius: 5px; /* Bordes redondeados */
+            position: absolute; /* Posicionamiento absoluto del botón */
+            left: 20px; /* Ajuste para alinear el botón a la izquierda */
+            width: 60px; /* Ancho del botón */
+            height: 60px; /* Alto del botón */
+            transition: opacity 0.3s ease-in-out; /* Transición suave para la sombra */
 
+        }
+        .goback:hover {
+          opacity: 0.3;
+        }
 .imgcontpro {
   height: 610px; /* or any other desired height */
   width: 100%; /* Ensure it takes full width */
@@ -133,6 +153,8 @@ export default {
 .card-title{
   font-size: 90px;
   color: #09DE85;
+  text-align: center;
+
 }
 
 
@@ -164,6 +186,12 @@ export default {
   #circularcursor{
     display: none;
 
+  }
+
+  .goback{
+    margin-top: 0;
+          margin-left: 1%;
+          padding: 5px;
   }
   .circularcursor{
     display: none;

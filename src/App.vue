@@ -28,36 +28,46 @@ export default {
   },
   mounted() {
     const cursor = document.getElementById('circularcursor');
+    const isMobile = window.matchMedia("(max-width: 768px)").matches;
 
-document.addEventListener('mousemove', function(e) {
-  const cursorWidth = cursor.offsetWidth;
-  const cursorHeight = cursor.offsetHeight;
-  const mouseX = e.clientX - (cursorWidth / 2);
-  const mouseY = e.clientY - (cursorHeight / 2);
-  cursor.style.left = mouseX + 'px';
-  cursor.style.top = mouseY + 'px';
-});
+    document.addEventListener('mousemove', function(e) {
+        if (isMobile) {
+            cursor.style.display = 'none';
+            return;
+        }
+        const cursorWidth = cursor.offsetWidth;
+        const cursorHeight = cursor.offsetHeight;
+        const mouseX = e.clientX - (cursorWidth / 2);
+        const mouseY = e.clientY - (cursorHeight / 2);
+        cursor.style.left = mouseX + 'px';
+        cursor.style.top = mouseY + 'px';
+    });
 
-document.addEventListener('click', function(e) {
-  const cursorWidth = cursor.offsetWidth;
-  const cursorHeight = cursor.offsetHeight;
-  const mouseX = e.clientX - cursorWidth / 2 - 5; // Ajuste a la izquierda
-  const mouseY = e.clientY - cursorHeight / 2 - 5; // Ajuste hacia arriba
-  cursor.style.left = mouseX + 'px';
-  cursor.style.top = mouseY + 'px';
-  cursor.style.height = '40px';
-  cursor.style.width = '40px';
-  cursor.style.display = 'block';
-  setTimeout(function() {
-    cursor.style.height = '70px';
-    cursor.style.width = '70px';
-    setTimeout(function() {
-      cursor.style.height = '40px';
-      cursor.style.width = '40px';
-    }, 100);
-  }, 10);
-});
-  }
+    document.addEventListener('click', function(e) {
+        if (isMobile) {
+            cursor.style.display = 'none';
+            return;
+        }
+        const cursorWidth = cursor.offsetWidth;
+        const cursorHeight = cursor.offsetHeight;
+        const mouseX = e.clientX - cursorWidth / 2 - 5; // Ajuste a la izquierda
+        const mouseY = e.clientY - cursorHeight / 2 - 5; // Ajuste hacia arriba
+        cursor.style.left = mouseX + 'px';
+        cursor.style.top = mouseY + 'px';
+        cursor.style.height = '40px';
+        cursor.style.width = '40px';
+        cursor.style.display = 'block';
+        setTimeout(function() {
+            cursor.style.height = '70px';
+            cursor.style.width = '70px';
+            setTimeout(function() {
+                cursor.style.height = '40px';
+                cursor.style.width = '40px';
+            }, 100);
+        }, 10);
+    });
+}
+
 }
 </script>
 
@@ -130,7 +140,35 @@ body {
   overflow-y: auto;
 }
 
+*::-webkit-scrollbar {
+  height: 11px;
+  width: 11px;
+}
+*::-webkit-scrollbar-track {
+  border-radius: 5px;
+  background-color: #171818;
+}
 
+*::-webkit-scrollbar-track:hover {
+  background-color: #000000;
+}
+
+*::-webkit-scrollbar-track:active {
+  background-color: #2D2E2F;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: #08D28E;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: #09DE97;
+}
+
+*::-webkit-scrollbar-thumb:active {
+  background-color: #07AE76;
+}
 @media (max-width: 1090px) {
   #circularcursor{
     display: none;
