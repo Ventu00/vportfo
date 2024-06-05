@@ -1,8 +1,8 @@
 <template>
   <div class="projects-view container animate__animated animate__fadeInUp">
     <div class="projectbar">
-      <button @click="closeProjects" class="btn goback  mb-4"></button>
-    <h1 class="text-center text-white my-4">Projects</h1>
+      <button @click="closeProjects" class="btn goback mb-4" tabindex="0" @keydown="handleKeyPress($event)"></button>
+      <h1 class="text-center text-white my-4">Projects</h1>
     </div>
 
     <div class="row">
@@ -11,18 +11,18 @@
         v-for="(project, index) in projects" 
         :key="index" 
         @click="selectProject(project)"
+        tabindex="0"
+        @keydown="handleProjectKeyPress($event, project)"
       >
         <div class="card h-100">
           <div class="image-container">
-
-          <img :src="project.image" class="card-img-top" :alt="project.title">
+            <img :src="project.image" class="card-img-top" :alt="project.title">
           </div>
           <div class="card-body">
             <h5 class="card-title">{{ project.title }}</h5>
             <p class="card-text">{{ project.description }}</p>
           </div>
-          <p class="tecnologies">{{project.lenguages}}</p>
-
+          <p class="tecnologies">{{ project.lenguages }}</p>
         </div>
       </div>
     </div>
@@ -61,7 +61,7 @@ export default {
     image: 'poke.png',
     initialProblem: 'The challenge we faced with project 3 was creating a comprehensive Pokemon management application.',
     solution: 'To address this challenge, we utilized the PokeAPI to fetch and display Pokemon data, and Vue.js for the frontend development. Our solution allows users to manage their teams, favorite Pokemon, and explore various other functionalities related to the Pokemon universe.',
-    link:"https://github.com/Ventu00/pokedex.git",
+    link:"https://ventu00.github.io/pokedex/",
     lenguages:" Javascript · Bootstrap · Vue.js ",
     process: 'During the development process, we seamlessly integrated the PokeAPI into our application, ensuring smooth data retrieval and manipulation. Additionally, we leveraged the capabilities of Vue.js to create an intuitive and responsive user interface. We iteratively tested and refined the application to ensure optimal performance and user experience.'
   
@@ -92,9 +92,21 @@ export default {
     }
   },
   methods: {
+    handleKeyPress(event) {
+      if (event.key === 'Enter' || event.key === ' ') {
+        this.closeProjects();
+      }
+    },
+    handleProjectKeyPress(event, project) {
+      if (event.key === 'Enter' || event.key === ' ') {
+        this.selectProject(project);
+      }
+    },
+    
     selectProject(project) {
       this.$emit('select-project', project); // Emitir el evento select-project
     },
+
     closeProjects() {
       this.$emit('close-projects'); // Emitir el evento close-projects
       

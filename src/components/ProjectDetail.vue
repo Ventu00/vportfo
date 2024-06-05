@@ -24,7 +24,7 @@
             </div>
           </div>
           <div class="titdetail">
-            <a :href="project.link" class="btn btnSolut">
+            <a :href="project.link" target="_blank" class="btn btnSolut">
     <img class="arrowbtn" src="./images/arrow.svg" alt="">
   </a>
   <strong class="tittext">Solution:</strong>
@@ -137,6 +137,12 @@ export default {
   border-top-right-radius: 15px; /* Ajusta este valor según tus necesidades */
   border-bottom-right-radius: 15px; /* Ajusta este valor según tus necesidades */
   text-decoration: none; /* Quita el subrayado del enlace */
+  transition: opacity 0.3s ease-in-out;
+}
+
+
+.btnSolut:hover {
+opacity: 0.2;
 }
 
 

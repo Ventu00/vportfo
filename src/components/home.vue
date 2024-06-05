@@ -72,7 +72,7 @@
               </div>
               </div>
             </div>
-            <div class="projects colcover containerComProject col-md-6 col-sm-12 animate__animated  animate__fadeInTopLeft" @click="toggleProjects">
+            <div class="projects colcover containerComProject col-md-6 col-sm-12 animate__animated  animate__fadeInTopLeft" @click="toggleProjects" tabindex="0" @keydown="handleKeyPress">
               <video autoplay muted loop class="video-background">
                 <source src="./images/projectvideo.mp4" type="video/mp4">
                 Your browser does not support the video tag.
@@ -84,14 +84,18 @@
                 <h1>Projects</h1>
                 <p class="contentText">Explore my creations and see how I transform ideas into effective and functional solutions.</p>
               </div>
-             
             </div>
+
           </div>
         </div>
         <div class="row">
-          <div class="col-md-12 map containerCom animate__animated  animate__fadeInTopLeft">
+          <a class="linkmap" href="
+          https://www.google.es/maps/place/Barcelona/@41.3926384,2.0576165,12z/data=!3m1!4b1!4m6!3m5!1s0x12a49816718e30e5:0x44b0fb3d4f47660a!8m2!3d41.3873974!4d2.168568!16zL20vMDFmNjI?entry=ttu">
+           <div class="col-md-12 map containerCom animate__animated  animate__fadeInTopLeft">
             <img src="./images/mark.svg" alt="Map marker icon">
           </div>
+        </a>
+       
         </div>
         <div class="row">
           <div class="col-md-12">
@@ -105,6 +109,7 @@
                   </div>
                   <div class="carousel-inner ">
                     <div class="carousel-item active">
+                      
                       <img src="./images/ralarsa.png" class="imgSlider" alt="Ralarsa IT Specialist">
                       <div class="textSlider">
                         <h2><span class="green-text">IT Specialist</span> in <span class="white-text">Ralarsa</span></h2>
@@ -188,6 +193,11 @@ export default {
     };
   },
   methods: {
+    handleKeyPress(event) {
+    if (event.key === 'Enter' || event.key === ' ') {
+      this.toggleProjects();
+    }
+  },
     sendEmail() {
       const email = 'alexventvv@gmail.com';
       window.location.href = `mailto:${email}?subject=Subject&body=Body`;
@@ -275,7 +285,11 @@ export default {
 </script>
 
 <style scoped>
-
+.linkmap{
+  width:100%;
+  padding:0;
+  margin:0;
+}
 
 .aleximg {
   border-top-left-radius: 15px;
@@ -316,7 +330,6 @@ export default {
 .pnvimg{
   max-width: 500px;
   max-height: 285px;
-  border-radius:30px;
 }
 
 .projects {
@@ -641,11 +654,12 @@ transition: border 0.6;
 }
 
 .imgSlider{
+  padding: 0;
     float: left;
     margin-right: 40px;
     height: 100%;
-    border-radius:30px;
-
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
 }
 
 .slider-container {
@@ -653,6 +667,7 @@ transition: border 0.6;
   margin: 0;
     width: 100%;
     background-color: #181818;
+    padding: 0;
 
 }
 .slider-container{
