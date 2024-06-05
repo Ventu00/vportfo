@@ -42,7 +42,7 @@ export default {
     initialProblem: 'We were confronted with a pressing issue: How could we offer assistance to the homeless community on a day-to-day basis?',
     solution: "To address this, my team and I developed Bitiby, an innovative application featuring an interactive map. Users can make reservations at participating restaurants that donate meals and discover nearby locations for donations.",
     link:"https://github.com/Joel26m/table4all.git",
-    lenguages:" Javascript · Bootstrap · Vue.js · Laravel · APIs · MapBox",
+    lenguages:" Javascript · Bootstrap · Vue.js · Laravel · APIs · MapBox · SQL",
     process: 'Throughout the project, we employed Agile methodologies such as Scrum, ensuring efficient collaboration and development. Additionally, we utilized GitHub for version control, enabling seamless management of project components.'
   },
   { 
@@ -52,7 +52,7 @@ export default {
     initialProblem: 'As a group of developers, we embarked on a project consisting of 4 mini web games using JavaScript.',
     solution: 'My contribution to the project was a game tailored for 11-year-old children, requiring players to count the running children on the screen. Players must use the spacebar to count them, and upon completing a level, the game displays the number of children who passed and how many times the spacebar was pressed.',
     link:"https://github.com/pizza2223/M12.git",
-    lenguages:" Javascript · Bootstrap",
+    lenguages:" Javascript · Bootstrap · SQL",
     process: 'Throughout the development process, we collaborated as a team of programmers to brainstorm ideas, design the game mechanics, and implement the features. We iteratively tested and refined the game to ensure an engaging and educational experience for our target audience.'
   },
   { 
@@ -83,7 +83,7 @@ export default {
   initialProblem: 'The challenge we faced with this project was to develop a user-friendly self-assessment platform with secure database integration.',
   solution: 'To address this challenge, we employed Vue.js for frontend development and Laravel for backend operations, ensuring seamless communication with the database. Additionally, we integrated APIs for database interaction, leveraging Postman and Axios for efficient data retrieval and management. Our application provides an intuitive interface for admin users to perform CRUD operations, allows teacher users to access student grades, and offers a self-assessment page for users to review criteria and publish their evaluations.',
   link:"https://github.com/Ventu00/autoavaluacio_alexventuravilalta.git",
-  lenguages:" Javascript · Bootstrap · Vue.js · Laravel · APIs",
+  lenguages:" Javascript · Bootstrap · Vue.js · Laravel · APIs · SQL",
   process: 'Throughout the development process, we utilized various techniques in Vue.js and Laravel to implement the desired functionalities effectively. We conducted thorough testing and validation to ensure data security, smooth user experience, and optimal performance of the application.'
 }
 
@@ -209,7 +209,7 @@ color:#BCBCBC;
   overflow: hidden;
   background-color: #252525ce;
   color: white;
-  border-radius: 30px;
+  border-radius: 25px;
   transition: border-color 0.15s; /* Transición suave para el cambio de color del borde */
     transition: border 0.15;
   transition: transform 0.5s; /* Agregamos una transición suave para una animación más fluida */
@@ -226,5 +226,14 @@ color:#BCBCBC;
   border-top-left-radius: 30px; /* Aplicar radio de borde solo en la esquina superior izquierda */
   border-top-right-radius: 30px; /* Aplicar radio de borde solo en la esquina superior derecha */
 }
+
+@media (max-width: 1090px) {
+  .goback{
+    left: 10px; /* Ajuste para alinear el botón a la izquierda */
+            width: 37px; /* Ancho del botón */
+            height: 37px;  
+          top: 10px; }
+}
+
 
 </style>

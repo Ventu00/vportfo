@@ -23,13 +23,18 @@
 
             </div>
           </div>
-          <div class="titdetail"><strong>Solution:</strong></div> 
+          <div class="titdetail">
+            <a :href="project.link" class="btn btnSolut">
+    <img class="arrowbtn" src="./images/arrow.svg" alt="">
+  </a>
+  <strong class="tittext">Solution:</strong>
+</div>
+
           <div class="contdetai ">
             <div class="textdet">
 
             {{ project.solution }}
             </div>
-            <a :href="project.link" class="btn btnSolut"><img class="arrowbtn" src="./images/arrow.svg" alt=""></a>
           </div>
           <div class="titdetail"><strong>Process:</strong></div>
           <div class="contdetai">
@@ -100,29 +105,40 @@ export default {
 }
 
 .imgcontpro img {
+  border-radius: 15px;
+
   width: 100%;
   min-height: 610px;
   object-fit: cover;
 }
 
 
-
+.card-title {
+  font-size: 90px;
+  color: #09DE85;
+  overflow: hidden;
+  text-align: center;
+}
 
 .btnSolut {
   position: absolute;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  width: 150px;
-  background-color: #09DE85;
+  top: 0; /* Posiciona el botón en la parte superior del contenedor */
+  right: 0; /* Alinea el botón a la derecha */
+  margin: 0; /* Elimina cualquier margen */
+  padding: 0; /* Elimina cualquier padding */
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 130px;
+  background-color: #09DE85;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
   border-top-right-radius: 15px; /* Ajusta este valor según tus necesidades */
   border-bottom-right-radius: 15px; /* Ajusta este valor según tus necesidades */
+  text-decoration: none; /* Quita el subrayado del enlace */
 }
+
 
 .arrowbtn {
 
@@ -133,7 +149,6 @@ export default {
 }
 
 .textdet {
-  max-width: calc(100% - 113px); /* Ajusta este valor según el ancho del botón más un margen adicional */
   /* Otros estilos que desees aplicar al texto */
 }
 
@@ -150,16 +165,14 @@ export default {
 .btn{
   cursor: none;
 }
-.card-title{
-  font-size: 90px;
-  color: #09DE85;
-  text-align: center;
 
-}
 
 
 
 .titdetail{
+  overflow: hidden;
+  
+  position: relative;
   font-size: 40px;
   border-radius: 30px;
   padding: 40px;
@@ -183,6 +196,53 @@ export default {
 
 
 @media (max-width: 1090px) {
+
+
+  .contdetai {
+  position: relative; /* Necesario para el posicionamiento absoluto del botón */
+  margin-bottom: 30px;
+  margin-top: 10px;
+  border-radius: 30px;
+  padding: 20px;
+  background-color: rgba(41, 41, 41, 0.867);
+}
+
+.tittext{}
+
+.titdetail{
+  overflow: hidden;
+  
+  position: relative;
+  font-size: 40px;
+  border-radius: 30px;
+  padding: 25px;
+  background-color: rgba(16, 16, 16, 0.778)
+}
+
+.btnSolut {
+  position: absolute;
+  top: 0; /* Posiciona el botón en la parte superior del contenedor */
+  right: 0; /* Alinea el botón a la derecha */
+  margin: 0; /* Elimina cualquier margen */
+  padding: 0; /* Elimina cualquier padding */
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  background-color: #09DE85;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: 15px; /* Ajusta este valor según tus necesidades */
+  border-bottom-right-radius: 15px; /* Ajusta este valor según tus necesidades */
+  text-decoration: none; /* Quita el subrayado del enlace */
+}
+
+
+
+  .titdetail{
+    font-size: 30px;
+  }
   #circularcursor{
     display: none;
 
@@ -192,6 +252,8 @@ export default {
     margin-top: 0;
           margin-left: 1%;
           padding: 5px;
+          width: 40px; /* Ancho del botón */
+            height: 40px;
   }
   .circularcursor{
     display: none;
@@ -202,7 +264,8 @@ export default {
     display: none;
 }
 .card-title{
-  font-size: 60px;
+  font-size: 40px;
+  text-align: center;
 }
 .imgcontpro {
   height: 210px; /* or any other desired height */

@@ -15,7 +15,10 @@
           <div class="introcont col-md-9 col-sm-12 animate__animated animate__fadeInTopLeft">
             <div class="intro ">
               <div class="image-container">
+                <div class="gradient">
+                
                 <img src="./images/alex.svg" class="img-fluid aleximg" alt="Imagen de Àlex Ventura">
+              </div>
               </div>
               <div class="text-container">
                 <h1 class="introtext introtit">Àlex Ventura</h1>
@@ -169,6 +172,8 @@
 <script>
 import ProjectsView from './projectsView.vue';
 import ProjectDetail from './ProjectDetail.vue';
+import tippy from 'tippy.js';
+import 'tippy.js/dist/tippy.css';
 
 export default {
   name: 'HomeView',
@@ -206,20 +211,21 @@ export default {
   },
   mounted() {
     const images = [
-      "api.svg",
-      "mapbox.svg",
-      "image 46.png",
-      "image 47.png",
-      "image 48.png",
-      "image 49.png",
-      "image 50.png",
-      "image 51.png",
-      "image 52.png",
-      "image 53.png",
-      "image 55.png",
-      "image 67.png",
-      "image 68.png",
-      "image 69.png"
+      "APIs.svg",
+      "Mapbox.svg",
+      "Java.png",
+      "PHP.png",
+      "HTML.png",
+      "Vue.js.png",
+      "Laravel.png",
+      "Bash.png",
+      "Bootstrap.png",
+      "JSON.png",
+      "Git.png",
+      "XML.png",
+      "Javascript.png",
+      "CSS.png",
+      "SQL.svg"
     ];
 
     const skillsContainer = document.querySelector(".lenguages");
@@ -228,7 +234,13 @@ export default {
       const img = document.createElement("img");
       img.src = require(`@/assets/images/${imageName}`); // Utilizando require para cargar la imagen
       img.alt = "";
-      img.classList.add("skills");
+      img.classList.add("skills", "no-select"); // Añadir la clase 'no-select'
+
+      // Añadir tooltip usando Tippy.js
+      tippy(img, {
+        content: imageName.replace(/\.[^/.]+$/, ""), // Eliminar la extensión del nombre del archivo para el tooltip
+      });
+
       skillsContainer.appendChild(img);
     });
 
@@ -263,6 +275,39 @@ export default {
 </script>
 
 <style scoped>
+
+
+.aleximg {
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;  position: absolute;
+  height: 345px;
+  margin: 0; /* Elimina cualquier margen */
+  object-fit: cover; /* Asegura que la imagen cubra el área sin distorsión */
+  display: block; /* Asegura que la imagen sea un bloque para que las propiedades de margin y padding funcionen correctamente */
+  position: relative;
+}
+
+.gradient{
+  
+  height:100%;
+  position: relative; /* Necesario para posicionar el pseudo-elemento ::after correctamente */
+  display: flex;
+  justify-content: flex-start; /* Asegura que los elementos dentro del contenedor se alineen a la izquierda */
+  align-items: center; /* Centra verticalmente los elementos si el contenedor tiene altura */
+  overflow: hidden;
+}
+
+.gradient::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 192px;
+  background: linear-gradient(to right, transparent, #0e0e0ef0); /* Degradado sutil hacia la derecha */
+  pointer-events: none; /* Asegura que el pseudo-elemento no interfiera con la interacción */
+}
+
 .fixed {
   position: fixed;
   width: 100%;
@@ -297,7 +342,10 @@ export default {
   object-fit: cover; /* Para que el video cubra todo el contenedor sin deformarse */
   z-index: -1; /* Para que el video esté detrás del texto y otros elementos */
     transition: opacity 0.5s ease; /* Transición de 0.5 segundos */
-
+    -webkit-user-select: none;  /* Safari */
+    -moz-user-select: none;     /* Firefox */
+    -ms-user-select: none;      /* Internet Explorer/Edge */
+    user-select: none;
 }
 
 .conTxtProj {
@@ -460,8 +508,15 @@ color: #09de97 ;
 }
 
 .image-container {
+  height:100%;
+  margin-left: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+  padding-top: 0;
+  padding-bottom: 0;
     flex: 0 0 auto; /* La imagen no crecerá */
-    margin-right: 20px; /* Espacio entre la imagen y el texto */
+    margin-right: 48px; /* Espacio entre la imagen y el texto */
 }
 
 .text-container {
@@ -524,7 +579,7 @@ color: #09de97 ;
     height: 100%;
 }
 
-.projects, .compdt1, .compdt2, .compdt3, .mail, .lengcont, .introcont, .map, .slider-container {
+.projects, .compdt1, .compdt2, .compdt3, .mail, .lengcont, .map, .slider-container {
     border: 2px solid #09de8500; /* Borde verde al pasar el mouse sobre el div */
 
     padding: 17.5px; /* Agrega un relleno para separar el borde del contenido */
@@ -536,6 +591,12 @@ color: #09de97 ;
     border: 2px solid #09de97; /* Borde verde al pasar el mouse sobre el div */
 }
 
+.introcont{
+  border: 2px solid #09de8500; /* Borde verde al pasar el mouse sobre el div */
+padding-left:0;
+transition: border-color 0.6s; /* Transición suave para el cambio de color del borde */
+transition: border 0.6;
+}
 
 
 
@@ -686,11 +747,15 @@ color: #09de97 ;
 .skills{
     padding: 15px;
     width: 84px;
-
+    -webkit-user-select: none;  /* Safari */
+    -moz-user-select: none;     /* Firefox */
+    -ms-user-select: none;      /* Internet Explorer/Edge */
+    user-select: none;  
 }
 .lengcont {
     flex: 0 0 25.33333%; /* Para que ocupe 1/3 del ancho */
-    max-width: 33.33333%;
+
+width: 100%;
     margin-left: 14px; /* Separación entre columnas */
     align-items: center;
     text-align: center;
@@ -725,14 +790,15 @@ color: #09de97 ;
 }
 
 
-.aleximg{
-  width: 240px;
-  margin-left:-12%;
+/* .aleximg{
   margin-right: 5px;
-}
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;  position: absolute;
+} */
 
-  .text-container{
-    padding: 30px;
+.text-container{
+
+padding: 30px;
 padding-left: 0;
 width: 100%;
 height:100%
@@ -740,7 +806,7 @@ height:100%
 
   
     .image-container {
-      margin-right: 0;
+      margin-right: 50px;
       padding: 0;
     }
 
@@ -795,14 +861,16 @@ height:100%
   .introtit{
   font-size: 85px;
 }
-  
+  .text-container{
+    margin-left: 40px;
+  }
   .image-container {
      display: none;
     }
     
 
 }
-@media (max-width: 1090px) {
+@media (max-width: 1300px) {
   body{
     cursor: none !important;
   }
@@ -941,9 +1009,15 @@ margin-right: 0;
     }
     .iconPro {
         max-width: 100%;
+        -webkit-user-select: none;  /* Safari */
+    -moz-user-select: none;     /* Firefox */
+    -ms-user-select: none;      /* Internet Explorer/Edge */
+    user-select: none;
     }
 
     .text-container {
+      margin-left: 10px;
+
         text-align: center;
         padding: 20px;
     }
