@@ -1,9 +1,10 @@
 <template>
-<div id="app" :class="{ 'blurred': showProjects } ">
+  <div id="app" :class="{ 'blurred': showProjects }">
+    <LoaderComponent v-if="loading" />
     <div :class="{ 'blurred': showProjects }">
       <Home @toggle-projects="showProjects = !showProjects" />
     </div>
-    <div v-if="showProjects" class="overlay ">
+    <div v-if="showProjects" class="overlay">
       <ProjectsView @close-projects="showProjects = false" />
     </div>
     <div id="circularcursor"></div>
@@ -14,16 +15,19 @@
 <script>
 import Home from './components/home.vue'
 import ProjectsView from './components/projectsView.vue'
+import LoaderComponent from './components/LoaderComponent.vue' // Importa el componente Loader
 
 export default {
   name: 'App',
   components: {
     Home,
-    ProjectsView
+    ProjectsView,
+    LoaderComponent // Añade el componente Loader a los componentes
   },
   data() {
     return {
-      showProjects: false
+      showProjects: false,
+      loading: true // Estado inicial del loader
     }
   },
   mounted() {
@@ -31,43 +35,47 @@ export default {
     const isMobile = window.matchMedia("(max-width: 768px)").matches;
 
     document.addEventListener('mousemove', function(e) {
-        if (isMobile) {
-            cursor.style.display = 'none';
-            return;
-        }
-        const cursorWidth = cursor.offsetWidth;
-        const cursorHeight = cursor.offsetHeight;
-        const mouseX = e.clientX - (cursorWidth / 2);
-        const mouseY = e.clientY - (cursorHeight / 2);
-        cursor.style.left = mouseX + 'px';
-        cursor.style.top = mouseY + 'px';
+      if (isMobile) {
+        cursor.style.display = 'none';
+        return;
+      }
+      const cursorWidth = cursor.offsetWidth;
+      const cursorHeight = cursor.offsetHeight;
+      const mouseX = e.clientX - (cursorWidth / 2);
+      const mouseY = e.clientY - (cursorHeight / 2);
+      cursor.style.left = mouseX + 'px';
+      cursor.style.top = mouseY + 'px';
     });
 
     document.addEventListener('click', function(e) {
-        if (isMobile) {
-            cursor.style.display = 'none';
-            return;
-        }
-        const cursorWidth = cursor.offsetWidth;
-        const cursorHeight = cursor.offsetHeight;
-        const mouseX = e.clientX - cursorWidth / 2 - 5; // Ajuste a la izquierda
-        const mouseY = e.clientY - cursorHeight / 2 - 5; // Ajuste hacia arriba
-        cursor.style.left = mouseX + 'px';
-        cursor.style.top = mouseY + 'px';
-        cursor.style.height = '40px';
-        cursor.style.width = '40px';
-        cursor.style.display = 'block';
+      if (isMobile) {
+        cursor.style.display = 'none';
+        return;
+      }
+      const cursorWidth = cursor.offsetWidth;
+      const cursorHeight = cursor.offsetHeight;
+      const mouseX = e.clientX - cursorWidth / 2 - 5; // Ajuste a la izquierda
+      const mouseY = e.clientY - cursorHeight / 2 - 5; // Ajuste hacia arriba
+      cursor.style.left = mouseX + 'px';
+      cursor.style.top = mouseY + 'px';
+      cursor.style.height = '40px';
+      cursor.style.width = '40px';
+      cursor.style.display = 'block';
+      setTimeout(function() {
+        cursor.style.height = '70px';
+        cursor.style.width = '70px';
         setTimeout(function() {
-            cursor.style.height = '70px';
-            cursor.style.width = '70px';
-            setTimeout(function() {
-                cursor.style.height = '40px';
-                cursor.style.width = '40px';
-            }, 100);
-        }, 10);
+          cursor.style.height = '40px';
+          cursor.style.width = '40px';
+        }, 100);
+      }, 10);
     });
-}
 
+    // Simula la carga de datos
+    setTimeout(() => {
+      this.loading = false; // Oculta el loader después de 3 segundos
+    }, 3000);
+  }
 }
 </script>
 
