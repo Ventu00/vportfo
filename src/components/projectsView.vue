@@ -43,7 +43,34 @@ export default {
     solution: "To address this, my team and I developed Bitiby, an innovative application featuring an interactive map. Users can make reservations at participating restaurants that donate meals and discover nearby locations for donations.",
     link:"https://github.com/Joel26m/table4all.git",
     lenguages:" Javascript · Bootstrap · Vue.js · Laravel · APIs · MapBox · SQL",
-    process: 'Throughout the project, we employed Agile methodologies such as Scrum, ensuring efficient collaboration and development. Additionally, we utilized GitHub for version control, enabling seamless management of project components.'
+    process: [
+  {
+    "step": "Researching Mapbox Functionality",
+    "description": "We began by thoroughly researching how Mapbox works, exploring its features and capabilities.",
+    "image": "btmapbox.png"
+  },
+  {
+    "step": "Implementing APIs with Axios Calls",
+    "description": "We learned to integrate APIs into our project using Axios for making HTTP requests, ensuring smooth data retrieval and communication.",
+    "image": "axios.png"
+  },
+  {
+    "step": "Designing a Database for Storing Orders and Restaurant Information",
+    "description": "We designed a robust database schema to efficiently store and manage user orders and restaurant details, ensuring data integrity and scalability.",
+    "image": "btbd.png"
+  },
+  {
+    "step": "Crafting User Interface with Figma",
+    "description": "Using Figma, we meticulously crafted the user interface, focusing on usability and aesthetics to deliver an intuitive experience.",
+    "image": "figmabt.png"
+  },
+  {
+    "step": "Creating a Logo Reflecting the Concept of Table and Community",
+    "description": "We conceptualized and designed a logo that cleverly combines the imagery of a '4' as a table and people gathering around, symbolizing community and shared meals.",
+    "image": "logodes.png"
+  }
+]
+
   },
   { 
     title: 'El mon de la Laia',
@@ -85,6 +112,7 @@ export default {
   link:"https://github.com/Ventu00/autoavaluacio_alexventuravilalta.git",
   lenguages:" Javascript · Bootstrap · Vue.js · Laravel · APIs · SQL",
   process: 'Throughout the development process, we utilized various techniques in Vue.js and Laravel to implement the desired functionalities effectively. We conducted thorough testing and validation to ensure data security, smooth user experience, and optimal performance of the application.'
+
 }
 
 

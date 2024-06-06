@@ -9,10 +9,8 @@
           <h1 class="card-title">{{ project.title }}</h1>
         </div>
         <div class="imgcontpro">
-        <img :src="project.image" class="img-fluid card-img-top" :alt="project.title">
-      </div>
-
-
+          <img :src="project.image" class="img-fluid card-img-top" :alt="project.title">
+        </div>
 
         <!-- <p class="card-text">{{ project.description }}</p> -->
         <div class="project-info" :style="{ backgroundColor: contentBackgroundColor }">
@@ -20,27 +18,33 @@
           <div class="contdetai">
             <div class="">
               {{ project.initialProblem }}
-
             </div>
           </div>
           <div class="titdetail">
             <a :href="project.link" target="_blank" class="btn btnSolut">
-    <img class="arrowbtn" src="./images/arrow.svg" alt="">
-  </a>
-  <strong class="tittext">Solution:</strong>
-</div>
-
-          <div class="contdetai ">
+              <img class="arrowbtn" src="./images/arrow.svg" alt="">
+            </a>
+            <strong class="tittext">Solution:</strong>
+          </div>
+          <div class="contdetai">
             <div class="textdet">
-
-            {{ project.solution }}
+              {{ project.solution }}
             </div>
           </div>
           <div class="titdetail"><strong>Process:</strong></div>
           <div class="contdetai">
-            <div class="">
-
-            {{ project.process }}
+            <div class="process">
+              <template v-if="Array.isArray(project.process)">
+                <div v-for="(step, index) in project.process" :key="index" class="process-step">
+                  <br>
+                  <h3>{{ step.step }}</h3>
+                  <p>{{ step.description }}</p>
+                  <img :src="step.image" alt="Step Image" class="imgstep">
+                </div>
+              </template>
+              <template v-else>
+                <p>{{ project.process }}</p>
+              </template>
             </div>
           </div>
         </div>
@@ -78,6 +82,26 @@ export default {
 </script>
 
 <style scoped>
+
+
+
+.process-step {
+  height: 100%; /* or any other desired height */
+  width: 100%; /* Ensure it takes full width */
+}
+
+.process-step img {
+  border-radius: 15px;
+
+  width: 100%;
+  min-height: 580px;
+  object-fit: cover;
+}
+
+
+
+
+
         .goback {
           position:fixed;
           z-index: 1111;
@@ -279,6 +303,17 @@ opacity: 0.2;
 }
 
 .imgcontpro img {
+  width: 100%;
+  min-height: 210px;
+  object-fit: cover;
+}
+
+.process-step  {
+  height: 100%; /* or any other desired height */
+  width: 100%; /* Ensure it takes full width */
+}
+
+.process-step  img {
   width: 100%;
   min-height: 210px;
   object-fit: cover;
