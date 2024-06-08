@@ -1,4 +1,6 @@
 <template>
+
+
   <div class="project-detail container animate__animated animate__fadeIn">
     <br>
     <div v-if="project" class="card h-100" :style="{ backgroundColor: projectBackgroundColor }">
@@ -8,9 +10,35 @@
         <div class="titdetail">
           <h1 class="card-title">{{ project.title }}</h1>
         </div>
-        <div class="imgcontpro">
-          <img :src="project.image" class="img-fluid card-img-top" :alt="project.title">
-        </div>
+  
+        <div id="carouselExample" class="carousel slide">
+          <button v-if="project.images.length > 1" class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true">
+                      <img src="./images/left.png" alt="Previous slide icon">
+                    </span>
+                    <span class="visually-hidden">Previous</span>
+  </button>
+  <button v-if="project.images.length > 1" class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true">
+                      <img src="./images/rigth.png"  alt="Next slide icon">
+                    </span>
+                    <span class="visually-hidden">Next</span>
+  </button>
+  <div class="carousel-inner">
+    <div v-for="(item, index) in project.images" :key="index" :class="{ 'carousel-item imgcontpro': true, 'active': index === 0 }">
+      <template v-if="isYouTubeVideo(item)">
+        <iframe class="card-img-top" width="100%" height="100%" :src="embedYouTubeVideo(item)" frameborder="0" allowfullscreen></iframe>
+      </template>
+      <template v-else>
+        <img :src="item" class="d-block w-100 img-fluid card-img-top" :alt="'project.title' + (index + 1)">
+      </template>
+    </div>
+  </div>
+
+  <!-- Carousel controls -->
+
+</div>
+
 
         <!-- <p class="card-text">{{ project.description }}</p> -->
         <div class="project-info" :style="{ backgroundColor: contentBackgroundColor }">
@@ -39,7 +67,7 @@
                   <br>
                   <h3>{{ step.step }}</h3>
                   <p>{{ step.description }}</p>
-                  <img :src="step.image" alt="Step Image" class="imgstep">
+                  <img v-if="step.image" :src="step.image" alt="Step Image" class="imgstep">
                 </div>
               </template>
               <template v-else>
@@ -76,12 +104,43 @@ export default {
   methods: {
     backToProjects() {
       this.$emit('back-to-projects'); // Emitir el evento back-to-projects
-    }
+    },
+    isYouTubeVideo(item) {
+      // Check if the item is a YouTube video link
+      return typeof item === 'string' && item.startsWith('https://www.youtube.com/');
+    },
+    embedYouTubeVideo(link) {
+  // Extract the video ID from the YouTube link and construct the embed URL
+  const videoId = link.match(/[?&]v=([^&]+)/);
+  if (videoId) {
+    return `https://www.youtube.com/embed/${videoId[1]}`;
+  } else {
+    // If the link is invalid or not a YouTube video, return an empty string
+    return '';
+  }
+}
   }
 };
 </script>
 
 <style scoped>
+
+/* .carousel-control-next-icon img{
+  width: 20px;
+  height: 20px;
+} */
+
+
+.carousel-control-prev-icon img,
+.carousel-control-next-icon img {
+  max-width: 50px; /* Set the maximum width of the image */
+  max-height: 50px; /* Set the maximum height of the image */
+}
+
+
+
+
+
 
 
 

@@ -9,10 +9,16 @@
     </div>
     <div id="circularcursor"></div>
     <div id="clickcursor"></div>
+    
   </div>
 </template>
 
 <script>
+import { Carousel } from 'bootstrap';
+// En main.js o App.vue
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+
 import Home from './components/home.vue'
 import ProjectsView from './components/projectsView.vue'
 import LoaderComponent from './components/LoaderComponent.vue' // Importa el componente Loader
@@ -31,6 +37,10 @@ export default {
     }
   },
   mounted() {
+    // Inicializa el carrusel sin jQuery
+    const myCarousel = document.getElementById('carouselExampleIndicators');
+    new Carousel(myCarousel);
+  
     const cursor = document.getElementById('circularcursor');
     const isMobile = window.matchMedia("(max-width: 768px)").matches;
 
@@ -80,6 +90,103 @@ export default {
 </script>
 
 <style>
+
+
+.slider-container {
+  cursor: none !important;
+  margin: 0;
+    width: 100%;
+    /* background-color: #181818; */
+    padding: 0;
+
+}
+.slider-container{
+  cursor: none !important;
+
+    padding-left: 0;}
+
+.carousel-inner{
+  cursor: none !important;
+
+  margin: 0;
+    padding: 0;
+}
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  cursor: none !important;
+    background-image: none; /* Elimina el ícono por defecto */
+    background-color: #09de97; /* Fondo verde del círculo */
+    border: 2px solid #09de97; /* Borde verde alrededor del ícono */
+    border-radius: 50%; /* Hacer el borde redondo */
+    padding: 15px; /* Espacio alrededor del ícono dentro del borde */
+    width: 70px; /* Ancho del círculo */
+    height: 70px; /* Alto del círculo */
+    color: #000000;
+    display: flex; /* Para centrar el icono */
+    justify-content: center; /* Para centrar el icono */
+    align-items: center; /* Para centrar el icono */
+}
+
+
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  cursor: none !important;
+
+}
+.carousel-control-next{
+  cursor: none !important;
+
+}
+
+
+[type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled) {
+  cursor: none !important;
+}
+
+
+
+.carousel-control-prev,
+.carousel-control-next {
+  cursor: none !important;
+
+    width: 5%; /* Ajusta el ancho de los controles si es necesario */
+}
+
+.carousel-item{
+    background-color: #181818;
+    border-radius: 15px;
+    cursor: none !important;
+
+}
+.carousel-indicators button {
+  cursor: none !important;
+
+    width: 5px; /* Ancho del indicador */
+    height: 10px; /* Alto del indicador */
+    border-radius: 50%; /* Hacer el borde redondo */
+    background-color: rgba(255, 255, 255, 0.5); /* Color blanco apagado para los indicadores inactivos */
+}
+
+.carousel-indicators .active {
+    cursor: none;
+
+    background-color: #ffffff; /* Color blanco para el indicador activo */
+}
+
+.carousel-indicators [data-bs-target] {
+    cursor: none;
+
+    height: 15px;
+    width: 15px;
+}
+
+.d-block{
+    cursor: none;
+
+    width: 100px;
+    height: 100px;
+}
 #app.blurred {
   filter: blur(50px);
 }

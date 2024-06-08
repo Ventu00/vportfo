@@ -115,8 +115,10 @@
                         <h2><span class="green-text">IT Specialist</span> in <span class="white-text">Ralarsa</span></h2>
                         <h3>2020-2021</h3>
                         <p class="contentText">  Provided technical support to departments and workshops, resolving<br> hardware and software issues efficiently.
-  Installed and configured <br>new Windows and Linux operating systems, ensuring smooth operations.<br>
-  Handled both physical and remote troubleshooting for Windows and Linux systems.</p>
+                    Installed and configured <br>new Windows and Linux operating systems, ensuring smooth operations.<br>
+                    Handled both physical and remote troubleshooting for Windows and Linux systems.</p>
+                    <a class="linkslider" target="blank" href="https://www.ralarsa.com/">Website Here</a>
+                    <br>
                       </div>
                     </div>
                     <div class="carousel-item">
@@ -127,7 +129,8 @@
                         <h3>2023</h3>
                         <p class="contentText">I developed and managed a CMS page using WordPress for Perfumery Núria Vilalta, aimed at establishing their online presence.</p>
                       </div>
-                      
+                      <a class="linkslider" target="blank" href="https://perfumerianuriavilalta.com/">Website Here</a>
+                      <br>
 
                     </div>
                     <!-- <div class="carousel-item">
@@ -285,6 +288,10 @@ export default {
 </script>
 
 <style scoped>
+.linkslider{
+  color:#09de97ba;
+}
+
 .linkmap{
   width:100%;
   padding:0;
