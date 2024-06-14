@@ -15,15 +15,17 @@
           <div class="introcont col-md-9 col-sm-12 animate__animated animate__fadeInTopLeft">
             <div class="intro ">
               <div class="image-container">
-                <div class="gradient">
+                <!-- <div class="gradient">
                 
                 <img src="./images/alex.svg" class="img-fluid aleximg" alt="Imagen de Àlex Ventura">
-              </div>
+              </div> -->
               </div>
               <div class="text-container">
                 <h1 class="introtext introtit">Àlex Ventura</h1>
-                <h2 class="greenText introtext">IT Specialist & Web developer</h2>
-                <p class="contentText introtext">I am passionate about creating effective solutions that address complex problems. Additionally, I am committed to continuous learning to stay at the forefront of the latest technologies.</p>
+                <h2 class="greenText introtext subtitintro">IT Specialist & Web developer</h2>
+                <p class="contentText introtext parrftit">Offering efficient solutions
+through versatile skills. I hold up
+at the forefront of the latest technologies.</p>
               </div>
             </div>
           </div>
@@ -53,11 +55,16 @@
                   </a>
                 </div>
                 <div class="compdt3 col-md-4 img-fluid">
-                  <a class="cvtext" href="https://drive.google.com/file/d/1u95BsQCQBN79v5HvjSdATEhrmmVxFkcT/view?usp=sharing" target="_blank">
-                    <h1>CV</h1>
-                    <img class="iconPro img-fluid" src="./images/download.png" alt="Download CV">
-                    <img src="./images/link.png" class="top-right-link" alt="Link icon">
-                  </a>
+                  <!-- <a class="cvtext" href="https://drive.google.com/file/d/1mLNDIuirqW9Bz0fGC4xWMdhxx1WLqk8N/view" target="_blank"> -->
+                    <div class="textexp">
+                      <h2 id="numberexp" class="numberexp" ></h2><p class="parexp" >Years in IT/Dev</p>
+
+                    </div>
+
+
+                    <!-- <img class="iconPro img-fluid" src="./images/download.png" alt="Download CV"> -->
+                    <!-- <img src="./images/link.png" class="top-right-link" alt="Link icon"> -->
+                  <!-- </a> -->
                 </div>
               </div>
               <div class="mail containerCom col-md-12">
@@ -128,8 +135,9 @@
                         <h2><span class="green-text">CMS Developer</span> in <span class="white-text">Perfumery Nuria Vilalta</span></h2>
                         <h3>2023</h3>
                         <p class="contentText">I developed and managed a CMS page using WordPress for Perfumery Núria Vilalta, aimed at establishing their online presence.</p>
+                        <a class="linkslider" target="blank" href="https://perfumerianuriavilalta.com/">Website Here</a>
+
                       </div>
-                      <a class="linkslider" target="blank" href="https://perfumerianuriavilalta.com/">Website Here</a>
                       <br>
 
                     </div>
@@ -196,6 +204,7 @@ export default {
     };
   },
   methods: {
+    
     handleKeyPress(event) {
     if (event.key === 'Enter' || event.key === ' ') {
       this.toggleProjects();
@@ -223,6 +232,18 @@ export default {
   }
   },
   mounted() {
+
+    const startYear = 2020; // Cambia esto al año de inicio real
+
+// Obtiene el año actual
+const currentYear = new Date().getFullYear();
+
+// Calcula los años de experiencia
+const yearsOfExperience = currentYear - startYear;
+
+// Actualiza el contenido del elemento HTML con el ID 'numberexp'
+document.getElementById('numberexp').textContent = yearsOfExperience;
+
     const images = [
       "APIs.svg",
       "Mapbox.svg",
@@ -283,6 +304,8 @@ export default {
 
   }
 }
+
+
 
 
 </script>
@@ -427,7 +450,7 @@ body{
 }
 
 .containerCom{
-    background-color: #1a1a1ae9;
+    background-color: #1a1a1aae;
 
 }
 
@@ -471,7 +494,24 @@ color: #09de97 ;
     text-align: left;
 }
 
+.subtitintro{
+  font-size: 40px;
+}
 
+.parrftit{
+  font-size: 21px;
+  margin-right: 25px;
+  margin-top: 13px;
+
+}
+
+.numberexp{
+  font-size:65px;
+}
+
+.textexp{
+  padding-top:1px;
+}
 
 .colcover{
     position: relative;
@@ -500,7 +540,7 @@ color: #09de97 ;
 }
 
 .introcont{
-    background-color: #121212f0;
+    background-color: #131313ec;
 
 }
 
@@ -536,7 +576,7 @@ color: #09de97 ;
   padding-top: 0;
   padding-bottom: 0;
     flex: 0 0 auto; /* La imagen no crecerá */
-    margin-right: 48px; /* Espacio entre la imagen y el texto */
+    margin-right: 55px; /* Espacio entre la imagen y el texto */
 }
 
 .text-container {
@@ -558,7 +598,7 @@ color: #09de97 ;
 
 .col-md-8,
 .col-md-4 {
-    background-color: #1a1a1af0;
+    background-color: #131313ec;
     border-radius: 15px;
     color: rgb(255, 255, 255);
 
@@ -569,7 +609,7 @@ color: #09de97 ;
     flex: 0 0 30%; /* Para que ocupe 1/3 del ancho */
     max-width: 53.33333%;
     margin-right: 20px;
-    background-color: #1a1a1af0;
+    background-color: #131313ec;
 }
 .compdt1{
   text-align: center;
@@ -577,7 +617,7 @@ color: #09de97 ;
     flex: 0 0 30%; /* Para que ocupe 1/3 del ancho */
     max-width: 53.33333%;
     margin-right: 20px;
-    background-color: #1a1a1af0;
+    background-color: #131313ec;
 }
 .compdt3 {
     flex: 0 0 30%; /* Para que ocupe 1/3 del ancho */
@@ -609,7 +649,7 @@ color: #09de97 ;
 
 .projects:hover, .compdt1:hover, .compdt2:hover, .compdt3:hover, .mail:hover, .lengcont:hover, .introcont:hover, .map:hover, .slider-container:hover {
     border: 2px solid #09de97; /* Borde verde al pasar el mouse sobre el div */
-}
+  }
 
 .introcont{
   border: 2px solid #09de8500; /* Borde verde al pasar el mouse sobre el div */
@@ -650,6 +690,7 @@ transition: border 0.6;
 
 .textSlider{
     margin: 15px;
+    margin-right: 55px;
 }
 
 .green-text {
@@ -673,7 +714,7 @@ transition: border 0.6;
   cursor: none !important;
   margin: 0;
     width: 100%;
-    background-color: #181818;
+    background-color: #131313ec;
     padding: 0;
 
 }
@@ -731,7 +772,7 @@ transition: border 0.6;
 }
 
 .carousel-item{
-    background-color: #181818;
+    background-color: #131313ec;
     border-radius: 15px;
     cursor: none !important;
 
@@ -798,6 +839,11 @@ width: 100%;
 }
 
 
+.introtit{
+  font-size: 85px;
+  margin-top:35px;
+}
+
 
 
 @media (max-width: 1667px) {
@@ -806,7 +852,9 @@ width: 100%;
 } */
 
 .introtit{
-  font-size: 65px;
+  font-size: 85px;
+  margin-top:25px;
+
 }
 .introtext{
 }
@@ -893,6 +941,19 @@ height:100%
 
 }
 @media (max-width: 1300px) {
+
+  .textSlider{
+    margin: 25px;
+    margin-right: 23px;
+}
+.group1{
+  align-content: center;
+  padding: 0;
+  padding-left: 12px;
+  padding-right: 7px;
+
+}
+
   body{
     cursor: none !important;
   }
@@ -929,11 +990,13 @@ display: none;
         margin-right: 2%;
     }
 .compdt3 {
-margin-right: 0;
 }
 
 
 .mail{
+  
+  margin-right:0;
+  width:100%;
 }
 
     .circularcursor{
@@ -954,6 +1017,10 @@ margin-right: 0;
         margin-right: 0;
         margin-bottom: 15px;
     }
+
+.parexp{
+  font-size: 14px;
+}
 
     .maildir{
 
@@ -1002,6 +1069,9 @@ margin-right: 0;
         margin-left:0;
 
 
+    }
+    .compdt3{
+      margin-right: 0;
     }
 
     .group1 .mail {
@@ -1082,6 +1152,11 @@ margin-right: 0;
 
     .lengcont {
         order: 2; /* Cambiar el orden de .lengcont para que aparezca después de .groups en móviles */
+    }
+
+
+    .mailImage{
+      margin-left:10px
     }
 }
 
